@@ -1,0 +1,94 @@
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_305_3\Downloads\Dimploma\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_311_3\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_305_4\Desktop\Dimploma\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.ThemeItemUserCont.resources
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Diploma\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.ThemeItemUserCont.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Вас\Diploma3 — копия\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.ThemeItemUserCont.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Вас\Diploma5\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.ThemeItemUserCont.resources
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Вас\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.Form1.resources
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.ThemeItemUserCont.resources
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_3\Desktop\Diploma5 — копия\Dimploma\obj\Debug\Dimploma.LessonForm.resources

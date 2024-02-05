@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LessonUserCont.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LessonUserCont.Designer.cs">
+      <DependentUpon>LessonUserCont.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="ThemeItemUserCont.Designer.cs">
       <DependentUpon>ThemeItemUserCont.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="LessonUserCont.resx">
+      <DependentUpon>LessonUserCont.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +145,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home_FILL0_wght400_GRAD0_opsz241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\пикча.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\пикча %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

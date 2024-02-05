@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.TimerMenu = new System.Windows.Forms.Timer(this.components);
             this.upperMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.formNameLabel = new System.Windows.Forms.Label();
@@ -44,15 +43,11 @@
             this.savedBtn = new System.Windows.Forms.Button();
             this.mainBtn = new System.Windows.Forms.Button();
             this.menuBtn = new System.Windows.Forms.Button();
+            this.TimerMenu = new System.Windows.Forms.Timer(this.components);
             this.upperMenu.SuspendLayout();
             this.upperPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // TimerMenu
-            // 
-            this.TimerMenu.Interval = 15;
-            this.TimerMenu.Tick += new System.EventHandler(this.SetTimer);
             // 
             // upperMenu
             // 
@@ -110,7 +105,7 @@
             this.themeItemsPanel.AutoScroll = true;
             this.themeItemsPanel.Location = new System.Drawing.Point(58, 72);
             this.themeItemsPanel.Name = "themeItemsPanel";
-            this.themeItemsPanel.Size = new System.Drawing.Size(1249, 663);
+            this.themeItemsPanel.Size = new System.Drawing.Size(1249, 656);
             this.themeItemsPanel.TabIndex = 3;
             // 
             // upperPanel
@@ -149,7 +144,7 @@
             this.menuPanel.MaximumSize = new System.Drawing.Size(265, 649);
             this.menuPanel.MinimumSize = new System.Drawing.Size(45, 649);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(265, 649);
+            this.menuPanel.Size = new System.Drawing.Size(45, 649);
             this.menuPanel.TabIndex = 0;
             // 
             // menuBorder
@@ -167,7 +162,6 @@
             this.savedBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savedBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.savedBtn.Image = global::Dimploma.Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24;
             this.savedBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.savedBtn.Location = new System.Drawing.Point(3, 126);
             this.savedBtn.Name = "savedBtn";
@@ -202,7 +196,6 @@
             this.menuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuBtn.Image = ((System.Drawing.Image)(resources.GetObject("menuBtn.Image")));
             this.menuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.menuBtn.Location = new System.Drawing.Point(3, 2);
             this.menuBtn.Name = "menuBtn";
@@ -212,6 +205,11 @@
             this.menuBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.menuBtn.UseVisualStyleBackColor = false;
             this.menuBtn.Click += new System.EventHandler(this.menuBtn_Click);
+            // 
+            // TimerMenu
+            // 
+            this.TimerMenu.Interval = 15;
+            this.TimerMenu.Tick += new System.EventHandler(this.SetTimer);
             // 
             // MainForm
             // 

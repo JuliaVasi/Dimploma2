@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Dimploma
 {
     public static class Global
     {
+       public static FlowLayoutPanel themeItemsPanel;
        public static MainForm mainForm;
     }
 }

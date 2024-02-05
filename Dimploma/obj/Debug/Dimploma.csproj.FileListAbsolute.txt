@@ -130,3 +130,4 @@ C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.csproj.GenerateRes
 C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
 C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.exe
 C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.LessonUserCont.resources

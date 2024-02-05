@@ -21,7 +21,7 @@ namespace Dimploma
     {
         private Button currentButton;
         PrivateFontCollection fonts = new PrivateFontCollection();
-        bool menuExpanded = true;
+        bool menuExpanded = false;
         public MainForm()
         {
             InitializeComponent();
@@ -33,7 +33,6 @@ namespace Dimploma
             setFontsToMenuBtns();
             setFonts();
             int colorNumber = 0;
-            int selectedBtn = 1;
            for (int i=0; i<6; i++)
             {
                 if (colorNumber == 3) colorNumber = 0;
@@ -41,17 +40,21 @@ namespace Dimploma
                 colorNumber++;
                 themeItemsPanel.Controls.Add(themeItem);
             }
-            menuBorder.BackColor = ColorTranslator.FromHtml(ThemeColor.ScrollBarGray);
+
             Global.mainForm = this;
+            Global.themeItemsPanel = themeItemsPanel;
             MenuSetup();
             SetIconsToMenuBtns();
         }
 
         private void SetIconsToMenuBtns()
         {
-            this.menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
-            this.mainBtn.Image = (Image)(new Bitmap(Properties.Resources.home_FILL0_wght400_GRAD0_opsz241, new Size(30, 30)));
-            this.savedBtn.Image = (Image)(new Bitmap(Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24, new Size(30, 30)));
+            if (menuExpanded) 
+                menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_open_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
+            else 
+                menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
+            mainBtn.Image = (Image)(new Bitmap(Properties.Resources.home_FILL0_wght400_GRAD0_opsz241, new Size(30, 30)));
+            savedBtn.Image = (Image)(new Bitmap(Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24, new Size(30, 30)));
         }
 
         private void MenuSetup()
@@ -61,6 +64,10 @@ namespace Dimploma
             upperMenu.BackColor = ColorTranslator.FromHtml(ThemeColor.BackgroundGray);
             menuPanel.BackColor = ColorTranslator.FromHtml(ThemeColor.BackgroundGray);
             upperPanel.BackColor = ColorTranslator.FromHtml(ThemeColor.BackgroundGray);
+
+            // set up menu icon and border
+            menuBorder.BackColor = ColorTranslator.FromHtml(ThemeColor.ScrollBarGray);
+            menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
         }
 
         private void addFonts()
@@ -100,13 +107,12 @@ namespace Dimploma
             }
         }    
 
-         private void DisableButton()
+        private void DisableButton()
         {
             foreach(Control previousBtn in menuPanel.Controls)
             {
                 if (previousBtn.GetType() == typeof(Button))
                 {
-                    // = Color.FromArgb(x, x, x);
                     previousBtn.BackColor = ColorTranslator.FromHtml(ThemeColor.BackgroundGray);
                     previousBtn.ForeColor = Color.Black;
                 }
@@ -130,15 +136,13 @@ namespace Dimploma
         private void menuBtn_Click(object sender, EventArgs e)
         {
             TimerMenu.Start();
-            if(!menuExpanded)
-            menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_open_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
-            else 
-                menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
+            //menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_open_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
+            SetIconsToMenuBtns();
+
         }
 
         private void SetTimer(object sender, EventArgs e)
         {
-
             if (menuExpanded)
             {
                 menuPanel.Width -= 10;
@@ -159,9 +163,20 @@ namespace Dimploma
             }
         }
 
-        private void exitAppBtn_Click(object sender, EventArgs e)
+        private void clearThemeItemsPanel()
         {
-            Application.Exit();
+            List<Control> listControls = new List<Control>();
+
+            foreach (Control control in themeItemsPanel.Controls)
+            {
+                listControls.Add(control);
+            }
+
+            foreach (Control control in listControls)
+            {
+                Controls.Remove(control);
+                control.Dispose();
+            }
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -178,6 +193,11 @@ namespace Dimploma
         private void minimazeBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+        
+        private void exitAppBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

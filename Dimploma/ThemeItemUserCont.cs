@@ -23,10 +23,10 @@ namespace Dimploma
         private int _radius = 10;
         private SolidBrush activeBackgroundBrush = new SolidBrush(SystemColors.Control);
         private SolidBrush innactiveBackgroundBrush = new SolidBrush(SystemColors.Control);
-        int colorNumber;
         Image innactiveArrowimg;
+        int colorNumber;
 
-        Graphics graphics;
+
         public int Radius
         {
             get { return _radius; }
@@ -43,7 +43,7 @@ namespace Dimploma
         }
         private void ThemeItemUserCont_Load(object sender, EventArgs e)
         {
-            setFonts();
+            SetFonts();
             setPicturesToBtn();
             setPictures();
         }
@@ -75,12 +75,12 @@ namespace Dimploma
         }
         protected override void OnPaint(PaintEventArgs e)
         {
-            graphics = e.Graphics;
+          Graphics graphics = e.Graphics;
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
             //drawBorder(graphics);
-            drawBackground(graphics);
+            DrawBackground(graphics);
         }
-        private void drawBackground(Graphics graphics)
+        private void DrawBackground(Graphics graphics)
         {
             switch (colorNumber)
             {
@@ -103,7 +103,7 @@ namespace Dimploma
             graphics.FillRoundedRectangle(activeBackgroundBrush, 10, 0, Width - 10, Height - 10, _radius);
         }
       
-        private void setFonts()
+        private void SetFonts()
         {
             PrivateFontCollection fonts = new PrivateFontCollection();
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Light.ttf"); //0
@@ -117,7 +117,7 @@ namespace Dimploma
             
         }  
 
-        private void themeLabel_MouseMove(object sender, MouseEventArgs e)
+        private void ThemeLabel_MouseMove(object sender, MouseEventArgs e)
         {
             switch (colorNumber)
             {
@@ -133,19 +133,52 @@ namespace Dimploma
             }
         }
 
-        private void themeLabel_MouseLeave(object sender, EventArgs e)
+        private void ThemeLabel_MouseLeave(object sender, EventArgs e)
         {
             themeLabel.ForeColor = Color.Black;
         }
 
-        private void openLesson(object sender, EventArgs e)
+        private void OpenLesson(object sender, EventArgs e)
         {
         }
 
-        private void arrowOpenBtn_MouseLeave(object sender, EventArgs e)
+        private void ArrowOpenBtn_MouseLeave(object sender, EventArgs e)
         {
             //arrowOpenBtn.Image = innactiveArrowimg;
             setPictures();
+        }
+
+        private void ArrowOpenBtn_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void ArrowOpenBtn_Click(object sender, EventArgs e)
+        {
+            ClearThemeItemsPanel();
+
+        }
+
+        private void ClearThemeItemsPanel()
+        {
+            List<Control> listControls = new List<Control>();
+
+            foreach (Control control in Global.themeItemsPanel.Controls)
+            {
+                listControls.Add(control);
+            }
+
+            foreach (Control control in listControls)
+            {
+
+                Global.themeItemsPanel.Controls.Remove(control);
+                control.Dispose();
+            }
+        }
+        /**
+         *       private void arrowOpenBtn_MouseLeave(object sender, EventArgs e)
+        {
+            arrowOpenBtn.Image = innactiveArrowimg;
         }
 
         private void arrowOpenBtn_MouseMove(object sender, MouseEventArgs e)
@@ -165,24 +198,7 @@ namespace Dimploma
                     arrowOpenBtn.Image = Properties.Resources.arrow_circle1;
                     break;
             }
-        }
+        }**/
 
-        private void arrowOpenBtn_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ThemeItemUserCont_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void ThemeItemUserCont_MouseLeave(object sender, EventArgs e)
-        {
-/*            
- *          activeBackgroundBrush = innactiveBackgroundBrush;
-            graphics.FillRoundedRectangle(activeBackgroundBrush, 10, 0, Width - 10, Height - 10, _radius);
-*/
-            // drawBackground(graphics);
-        }
     }
 }

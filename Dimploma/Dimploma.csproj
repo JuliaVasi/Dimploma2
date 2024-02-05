@@ -46,19 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Global.cs" />
     <Compile Include="GraphicsExtension.cs" />
-    <Compile Include="LessonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LessonForm.Designer.cs">
-      <DependentUpon>LessonForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -73,11 +68,8 @@
     <Compile Include="ThemeItemUserCont.Designer.cs">
       <DependentUpon>ThemeItemUserCont.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LessonForm.resx">
-      <DependentUpon>LessonForm.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,15 +93,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1904655-add-bookmark-favorite-favourite-important-note-ribbon_122505.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\student_learning.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1904655-add-bookmark-favorite-favourite-important-note-ribbon_122505 %281%29.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Hand coding-bro 1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -117,21 +100,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Hand coding-bro 3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\school_FILL0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menu_FILL1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menu_FILL11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menu_open_FILL0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\menu_FILL0.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_circle1.png" />
@@ -150,6 +118,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arrow_circle_lightviolet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_FILL0_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark_FILL1_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_FILL1_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_FILL1_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_open_FILL1_wght400_GRAD0_opsz24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_FILL0_wght400_GRAD0_opsz241.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

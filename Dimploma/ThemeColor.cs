@@ -14,7 +14,8 @@ namespace Dimploma
         public static string LightTeal = "#ECFDFE";
 
         // Major Colors
-        public static string BackgroundGray = "#F9F9F9";
+       public static string BackgroundGray = "#F9F9F9";
+       public static string ScrollBarGray = "#D9D9D9";
        public static string TextGray = "#7D7D7D";
        public static string Teal = "#16E7F3";
        public static string Purple = "#2216F3";
@@ -26,14 +27,8 @@ namespace Dimploma
        public static string TealDark = "#79E8F2";
 
         //color for menu
-        public static string SelectedMenu = "#E4EBF7";
+        public static string SelectedMenu0 = "#E4EBF7";
+        public static string SelectedMenu = "#8BBCF9";
         
-
-
-      public static  List<string> ColorList = new List<string>() {
-        "#d96262",
-        "#234d8c",
-        "#6aa883"
-        };
     }
 }

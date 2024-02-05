@@ -21,9 +21,12 @@ namespace Dimploma
     public partial class ThemeItemUserCont : UserControl
     {
         private int _radius = 10;
-        private SolidBrush backgroundBrush = new SolidBrush(SystemColors.Control);
+        private SolidBrush activeBackgroundBrush = new SolidBrush(SystemColors.Control);
+        private SolidBrush innactiveBackgroundBrush = new SolidBrush(SystemColors.Control);
         int colorNumber;
         Image innactiveArrowimg;
+
+        Graphics graphics;
         public int Radius
         {
             get { return _radius; }
@@ -72,7 +75,7 @@ namespace Dimploma
         }
         protected override void OnPaint(PaintEventArgs e)
         {
-            Graphics graphics = e.Graphics;
+            graphics = e.Graphics;
             graphics.SmoothingMode = SmoothingMode.AntiAlias;
             //drawBorder(graphics);
             drawBackground(graphics);
@@ -82,62 +85,36 @@ namespace Dimploma
             switch (colorNumber)
             {
                 case 0:
-                    backgroundBrush = new SolidBrush(ColorTranslator.FromHtml(ThemeColor.LightBlue));
+                    activeBackgroundBrush = new SolidBrush(ColorTranslator.FromHtml(ThemeColor.LightBlue));
                     descriptionTextbox.BackColor = ColorTranslator.FromHtml(ThemeColor.LightBlue);
                     break;
 
                 case 1:
-                    backgroundBrush = new SolidBrush(ColorTranslator.FromHtml(ThemeColor.LightPurple));
+                    activeBackgroundBrush = new SolidBrush(ColorTranslator.FromHtml(ThemeColor.LightPurple));
                     descriptionTextbox.BackColor = ColorTranslator.FromHtml(ThemeColor.LightPurple);
 
                     break;
 
                 case 2:
-                    backgroundBrush = new SolidBrush(ColorTranslator.FromHtml(ThemeColor.LightTeal));
+                    activeBackgroundBrush = new SolidBrush(ColorTranslator.FromHtml(ThemeColor.LightTeal));
                     descriptionTextbox.BackColor = ColorTranslator.FromHtml(ThemeColor.LightTeal);
                     break;
         }
-            graphics.FillRoundedRectangle(backgroundBrush, 10, 0, Width, Height - 10, _radius);
+            graphics.FillRoundedRectangle(activeBackgroundBrush, 10, 0, Width - 10, Height - 10, _radius);
         }
       
         private void setFonts()
         {
-            
             PrivateFontCollection fonts = new PrivateFontCollection();
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Light.ttf"); //0
-
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Bold.ttf");//1
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Regular.ttf");//2
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Medium.ttf");//3
 
             descriptionTextbox.ForeColor = ColorTranslator.FromHtml(ThemeColor.TextGray);
-            themeLabel.Font = new Font(fonts.Families[3], 20);
             descriptionTextbox.Font = new Font(fonts.Families[0], 16);
-
-       /*     if (colorNumber == 0)
-            {
-                themeLabel.Font = new Font(fonts.Families[1], 24);
-                descriptionTextbox.Font = new Font(fonts.Families[0], 16);
-            }
-            else if  (colorNumber == 1) {
-           
-            }
-            else if (colorNumber == 1)
-            {
-                themeLabel.Font = new Font(fonts.Families[1], 16);
-                descriptionTextbox.Font = new Font(fonts.Families[0], 14);
-            }
-            else if (colorNumber == 1)
-            {
-                themeLabel.Font = new Font(fonts.Families[1], 16);
-                descriptionTextbox.Font = new Font(fonts.Families[0], 14);
-            }
-            else
-            {
-                themeLabel.Font = new Font(fonts.Families[3], 16);
-                descriptionTextbox.Font = new Font(fonts.Families[2], 14);
-            }*/
-
+            themeLabel.Font = new Font(fonts.Families[3], 20);
+            
         }  
 
         private void themeLabel_MouseMove(object sender, MouseEventArgs e)
@@ -185,15 +162,27 @@ namespace Dimploma
                     break;  
                 case 2:
                     innactiveArrowimg = Properties.Resources.arrow_circle_lightteal;
-                    arrowOpenBtn.Image = Properties.Resources.arrow_circle3;
+                    arrowOpenBtn.Image = Properties.Resources.arrow_circle1;
                     break;
             }
         }
 
         private void arrowOpenBtn_Click(object sender, EventArgs e)
         {
-            LessonForm lessonForm = new LessonForm();
-            lessonForm.Show();
+        }
+
+        private void ThemeItemUserCont_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void ThemeItemUserCont_MouseLeave(object sender, EventArgs e)
+        {
+/*            
+ *          activeBackgroundBrush = innactiveBackgroundBrush;
+            graphics.FillRoundedRectangle(activeBackgroundBrush, 10, 0, Width - 10, Height - 10, _radius);
+*/
+            // drawBackground(graphics);
         }
     }
 }

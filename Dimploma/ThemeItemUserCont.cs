@@ -25,6 +25,7 @@ namespace Dimploma
         private SolidBrush innactiveBackgroundBrush = new SolidBrush(SystemColors.Control);
         Image innactiveArrowimg;
         int colorNumber;
+        LessonUserCont lessonUserCont;
 
 
         public int Radius
@@ -44,15 +45,10 @@ namespace Dimploma
         private void ThemeItemUserCont_Load(object sender, EventArgs e)
         {
             SetFonts();
-            setPicturesToBtn();
-            setPictures();
+            SetPictures();
         }
-
-        private void setPicturesToBtn()
-        {
-          
-        }
-        private void setPictures()
+    
+        private void SetPictures()
         {
             switch (colorNumber)
             {
@@ -64,7 +60,6 @@ namespace Dimploma
                 case 1:
                      picturebox.Image = Properties.Resources.Hand_coding_bro_2;
                      arrowOpenBtn.Image = Properties.Resources.arrow_circle_lightviolet;
-
                     break;
 
                 case 2:
@@ -114,7 +109,6 @@ namespace Dimploma
             descriptionTextbox.ForeColor = ColorTranslator.FromHtml(ThemeColor.TextGray);
             descriptionTextbox.Font = new Font(fonts.Families[0], 16);
             themeLabel.Font = new Font(fonts.Families[3], 20);
-            
         }  
 
         private void ThemeLabel_MouseMove(object sender, MouseEventArgs e)
@@ -138,50 +132,12 @@ namespace Dimploma
             themeLabel.ForeColor = Color.Black;
         }
 
-        private void OpenLesson(object sender, EventArgs e)
-        {
-        }
-
         private void ArrowOpenBtn_MouseLeave(object sender, EventArgs e)
         {
-            //arrowOpenBtn.Image = innactiveArrowimg;
-            setPictures();
-        }
-
-        private void ArrowOpenBtn_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void ArrowOpenBtn_Click(object sender, EventArgs e)
-        {
-            ClearThemeItemsPanel();
-
-        }
-
-        private void ClearThemeItemsPanel()
-        {
-            List<Control> listControls = new List<Control>();
-
-            foreach (Control control in Global.themeItemsPanel.Controls)
-            {
-                listControls.Add(control);
-            }
-
-            foreach (Control control in listControls)
-            {
-
-                Global.themeItemsPanel.Controls.Remove(control);
-                control.Dispose();
-            }
-        }
-        /**
-         *       private void arrowOpenBtn_MouseLeave(object sender, EventArgs e)
-        {
             arrowOpenBtn.Image = innactiveArrowimg;
+           // SetPictures();
         }
-
-        private void arrowOpenBtn_MouseMove(object sender, MouseEventArgs e)
+        private void ArrowOpenBtn_MouseMove(object sender, MouseEventArgs e)
         {
             switch (colorNumber)
             {
@@ -198,7 +154,13 @@ namespace Dimploma
                     arrowOpenBtn.Image = Properties.Resources.arrow_circle1;
                     break;
             }
-        }**/
-
+        }
+        private void ShowLesson_Click(object sender, EventArgs e)
+        {
+            Global.clearThemeItemsPanel();
+            lessonUserCont = new LessonUserCont(colorNumber);
+            Global.themeItemsPanel.Controls.Add(lessonUserCont);
+        }
+       
     }
 }

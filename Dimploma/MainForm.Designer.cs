@@ -98,7 +98,7 @@
             this.exitAppBtn.TabIndex = 11;
             this.exitAppBtn.Text = "✕";
             this.exitAppBtn.UseVisualStyleBackColor = false;
-            this.exitAppBtn.Click += new System.EventHandler(this.exitAppBtn_Click);
+            this.exitAppBtn.Click += new System.EventHandler(this.ExitAppBtn_Click);
             // 
             // themeItemsPanel
             // 
@@ -116,7 +116,7 @@
             this.upperPanel.Name = "upperPanel";
             this.upperPanel.Size = new System.Drawing.Size(1328, 29);
             this.upperPanel.TabIndex = 4;
-            this.upperPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.upperMenu_MouseDown);
+            this.upperPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UpperMenu_MouseDown);
             // 
             // minimazeBtn
             // 
@@ -131,7 +131,7 @@
             this.minimazeBtn.TabIndex = 12;
             this.minimazeBtn.Text = "__";
             this.minimazeBtn.UseVisualStyleBackColor = false;
-            this.minimazeBtn.Click += new System.EventHandler(this.minimazeBtn_Click);
+            this.minimazeBtn.Click += new System.EventHandler(this.MinimazeBtn_Click);
             // 
             // menuPanel
             // 
@@ -170,7 +170,7 @@
             this.savedBtn.Text = "   Сохраненное";
             this.savedBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.savedBtn.UseVisualStyleBackColor = false;
-            this.savedBtn.Click += new System.EventHandler(this.savedBtn_Click);
+            this.savedBtn.Click += new System.EventHandler(this.SavedBtn_Click);
             // 
             // mainBtn
             // 
@@ -187,7 +187,7 @@
             this.mainBtn.Text = "   Главная";
             this.mainBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.mainBtn.UseVisualStyleBackColor = false;
-            this.mainBtn.Click += new System.EventHandler(this.mainBtn_Click);
+            this.mainBtn.Click += new System.EventHandler(this.MainBtn_Click);
             // 
             // menuBtn
             // 
@@ -204,7 +204,7 @@
             this.menuBtn.Text = "   Меню";
             this.menuBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.menuBtn.UseVisualStyleBackColor = false;
-            this.menuBtn.Click += new System.EventHandler(this.menuBtn_Click);
+            this.menuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
             // 
             // TimerMenu
             // 

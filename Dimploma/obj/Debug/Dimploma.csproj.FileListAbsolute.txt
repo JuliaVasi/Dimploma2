@@ -131,3 +131,29 @@ C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.csproj.CoreCompile
 C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.exe
 C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.pdb
 C:\Users\0_311_1\Desktop\Diploma6\Dimploma\obj\Debug\Dimploma.LessonUserCont.resources
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.LessonUserCont.resources
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.MainForm.resources
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.ThemeItemUserCont.resources
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_305_3\Desktop\Diploma7\Dimploma\obj\Debug\Dimploma.pdb
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\bin\Debug\Dimploma.exe.config
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\bin\Debug\Dimploma.exe
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\bin\Debug\Dimploma.pdb
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.csproj.AssemblyReference.cache
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.csproj.SuggestedBindingRedirects.cache
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.LessonUserCont.resources
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.MainForm.resources
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.Properties.Resources.resources
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.ThemeItemUserCont.resources
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.csproj.GenerateResource.cache
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.csproj.CoreCompileInputs.cache
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.exe
+C:\Users\0_305_3\Desktop\Diploma7 — копия\Dimploma\obj\Debug\Dimploma.pdb

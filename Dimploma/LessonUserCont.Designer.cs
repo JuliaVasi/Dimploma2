@@ -28,197 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LessonUserCont));
-            this.descriptionTextbox = new System.Windows.Forms.TextBox();
-            this.themeLabel = new System.Windows.Forms.Label();
-            this.picturebox = new System.Windows.Forms.PictureBox();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
+            this.DescriptionTextbox = new System.Windows.Forms.TextBox();
+            this.ThemeLabel = new System.Windows.Forms.Label();
+            this.Picturebox = new System.Windows.Forms.PictureBox();
+            this.aboutLessonPanel = new System.Windows.Forms.Panel();
+            this.materialsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.MaterialLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).BeginInit();
+            this.aboutLessonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // descriptionTextbox
+            // DescriptionTextbox
             // 
-            this.descriptionTextbox.BackColor = System.Drawing.SystemColors.Window;
-            this.descriptionTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.descriptionTextbox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.descriptionTextbox.Enabled = false;
-            this.descriptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.descriptionTextbox.Location = new System.Drawing.Point(54, 130);
-            this.descriptionTextbox.MaxLength = 2000;
-            this.descriptionTextbox.Multiline = true;
-            this.descriptionTextbox.Name = "descriptionTextbox";
-            this.descriptionTextbox.ReadOnly = true;
-            this.descriptionTextbox.Size = new System.Drawing.Size(736, 102);
-            this.descriptionTextbox.TabIndex = 9;
-            this.descriptionTextbox.Text = resources.GetString("descriptionTextbox.Text");
+            this.DescriptionTextbox.BackColor = System.Drawing.SystemColors.Window;
+            this.DescriptionTextbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DescriptionTextbox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DescriptionTextbox.Enabled = false;
+            this.DescriptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.DescriptionTextbox.Location = new System.Drawing.Point(68, 99);
+            this.DescriptionTextbox.MaxLength = 2000;
+            this.DescriptionTextbox.Multiline = true;
+            this.DescriptionTextbox.Name = "DescriptionTextbox";
+            this.DescriptionTextbox.ReadOnly = true;
+            this.DescriptionTextbox.Size = new System.Drawing.Size(713, 96);
+            this.DescriptionTextbox.TabIndex = 9;
+            this.DescriptionTextbox.Text = resources.GetString("DescriptionTextbox.Text");
             // 
-            // themeLabel
+            // ThemeLabel
             // 
-            this.themeLabel.AutoSize = true;
-            this.themeLabel.BackColor = System.Drawing.Color.Transparent;
-            this.themeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.themeLabel.Location = new System.Drawing.Point(49, 39);
-            this.themeLabel.Name = "themeLabel";
-            this.themeLabel.Size = new System.Drawing.Size(270, 25);
-            this.themeLabel.TabIndex = 7;
-            this.themeLabel.Text = "Поразрядные операции";
+            this.ThemeLabel.AutoSize = true;
+            this.ThemeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.ThemeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ThemeLabel.Location = new System.Drawing.Point(63, 41);
+            this.ThemeLabel.Name = "ThemeLabel";
+            this.ThemeLabel.Size = new System.Drawing.Size(270, 25);
+            this.ThemeLabel.TabIndex = 7;
+            this.ThemeLabel.Text = "Поразрядные операции";
             // 
-            // picturebox
+            // Picturebox
             // 
-            this.picturebox.BackColor = System.Drawing.Color.Transparent;
-            this.picturebox.ErrorImage = null;
-            this.picturebox.Image = global::Dimploma.Properties.Resources.пикча__1_;
-            this.picturebox.InitialImage = null;
-            this.picturebox.Location = new System.Drawing.Point(813, 39);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(257, 271);
-            this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picturebox.TabIndex = 8;
-            this.picturebox.TabStop = false;
+            this.Picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.Picturebox.ErrorImage = null;
+            this.Picturebox.Image = global::Dimploma.Properties.Resources.пикча__1_;
+            this.Picturebox.InitialImage = null;
+            this.Picturebox.Location = new System.Drawing.Point(856, 41);
+            this.Picturebox.Name = "Picturebox";
+            this.Picturebox.Size = new System.Drawing.Size(213, 208);
+            this.Picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Picturebox.TabIndex = 8;
+            this.Picturebox.TabStop = false;
             // 
-            // bindingNavigator1
+            // aboutLessonPanel
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1126, 25);
-            this.bindingNavigator1.TabIndex = 10;
-            this.bindingNavigator1.Text = "bindingNavigator1";
-            this.bindingNavigator1.PaddingChanged += new System.EventHandler(this.bindingNavigator1_PaddingChanged);
+            this.aboutLessonPanel.BackColor = System.Drawing.Color.Transparent;
+            this.aboutLessonPanel.Controls.Add(this.Picturebox);
+            this.aboutLessonPanel.Controls.Add(this.ThemeLabel);
+            this.aboutLessonPanel.Controls.Add(this.DescriptionTextbox);
+            this.aboutLessonPanel.Location = new System.Drawing.Point(1, 1);
+            this.aboutLessonPanel.Name = "aboutLessonPanel";
+            this.aboutLessonPanel.Size = new System.Drawing.Size(1126, 287);
+            this.aboutLessonPanel.TabIndex = 10;
             // 
-            // bindingNavigatorMoveFirstItem
+            // materialsPanel
             // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            this.materialsPanel.AutoScroll = true;
+            this.materialsPanel.Location = new System.Drawing.Point(4, 368);
+            this.materialsPanel.Name = "materialsPanel";
+            this.materialsPanel.Size = new System.Drawing.Size(1124, 469);
+            this.materialsPanel.TabIndex = 11;
             // 
-            // bindingNavigatorMovePreviousItem
+            // MaterialLabel
             // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Положение";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.MaterialLabel.AutoSize = true;
+            this.MaterialLabel.Location = new System.Drawing.Point(3, 300);
+            this.MaterialLabel.Name = "MaterialLabel";
+            this.MaterialLabel.Size = new System.Drawing.Size(65, 13);
+            this.MaterialLabel.TabIndex = 12;
+            this.MaterialLabel.Text = "Материалы";
             // 
             // LessonUserCont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.descriptionTextbox);
-            this.Controls.Add(this.picturebox);
-            this.Controls.Add(this.themeLabel);
+            this.Controls.Add(this.MaterialLabel);
+            this.Controls.Add(this.materialsPanel);
+            this.Controls.Add(this.aboutLessonPanel);
             this.Name = "LessonUserCont";
-            this.Size = new System.Drawing.Size(1126, 369);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
+            this.Size = new System.Drawing.Size(1249, 656);
+            this.Load += new System.EventHandler(this.LessonUserCont_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).EndInit();
+            this.aboutLessonPanel.ResumeLayout(false);
+            this.aboutLessonPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,20 +127,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox descriptionTextbox;
-        private System.Windows.Forms.PictureBox picturebox;
-        private System.Windows.Forms.Label themeLabel;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.TextBox DescriptionTextbox;
+        private System.Windows.Forms.PictureBox Picturebox;
+        private System.Windows.Forms.Label ThemeLabel;
+        private System.Windows.Forms.Panel aboutLessonPanel;
+        private System.Windows.Forms.FlowLayoutPanel materialsPanel;
+        private System.Windows.Forms.Label MaterialLabel;
     }
 }

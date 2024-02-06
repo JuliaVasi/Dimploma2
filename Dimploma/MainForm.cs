@@ -25,13 +25,14 @@ namespace Dimploma
         public MainForm()
         {
             InitializeComponent();
+            Global.clearThemeItemsPanel = ClearThemeItemsPanel;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            addFonts();
-            setFontsToMenuBtns();
-            setFonts();
+            AddFonts();
+            SetFontsToMenuBtns();
+            SetFonts();
             int colorNumber = 0;
            for (int i=0; i<6; i++)
             {
@@ -49,10 +50,6 @@ namespace Dimploma
 
         private void SetIconsToMenuBtns()
         {
-            if (menuExpanded) 
-                menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_open_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
-            else 
-                menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
             mainBtn.Image = (Image)(new Bitmap(Properties.Resources.home_FILL0_wght400_GRAD0_opsz241, new Size(30, 30)));
             savedBtn.Image = (Image)(new Bitmap(Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24, new Size(30, 30)));
         }
@@ -70,7 +67,7 @@ namespace Dimploma
             menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
         }
 
-        private void addFonts()
+        private void AddFonts()
         {
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Light.ttf");
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Bold.ttf");
@@ -78,14 +75,14 @@ namespace Dimploma
             fonts.AddFontFile("Fonts/MPLUSRounded1c-Medium.ttf");
         }
 
-        private void setFonts()
+        private void SetFonts()
         {
             formNameLabel.Font = new Font(fonts.Families[2], 20);
             exitAppBtn.Font = new Font(fonts.Families[2], 18);
             minimazeBtn.Font = new Font(fonts.Families[2], 18);
         }
 
-        private void setFontsToMenuBtns()
+        private void SetFontsToMenuBtns()
         {
             mainBtn.Font = new Font(fonts.Families[0], 16);
             menuBtn.Font = new Font(fonts.Families[0], 16);
@@ -117,28 +114,30 @@ namespace Dimploma
                     previousBtn.ForeColor = Color.Black;
                 }
             }
-            setFontsToMenuBtns();
+            SetFontsToMenuBtns();
             SetIconsToMenuBtns();
         }
 
-        private void mainBtn_Click(object sender, EventArgs e)
+        private void MainBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             mainBtn.Image = (Image)(new Bitmap(Properties.Resources.home_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
         }
 
-        private void savedBtn_Click(object sender, EventArgs e)
+        private void SavedBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             savedBtn.Image = (Image)(new Bitmap(Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
         }
 
-        private void menuBtn_Click(object sender, EventArgs e)
+        private void MenuBtn_Click(object sender, EventArgs e)
         {
+            //change menu icon, then change menu state
+            if (menuExpanded)
+                menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
+            else
+                menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_open_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
             TimerMenu.Start();
-            //menuBtn.Image = (Image)(new Bitmap(Properties.Resources.menu_open_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
-            SetIconsToMenuBtns();
-
         }
 
         private void SetTimer(object sender, EventArgs e)
@@ -163,7 +162,7 @@ namespace Dimploma
             }
         }
 
-        private void clearThemeItemsPanel()
+        private void ClearThemeItemsPanel()
         {
             List<Control> listControls = new List<Control>();
 
@@ -184,18 +183,18 @@ namespace Dimploma
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
-        private void upperMenu_MouseDown(object sender, MouseEventArgs e)
+        private void UpperMenu_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void minimazeBtn_Click(object sender, EventArgs e)
+        private void MinimazeBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
         
-        private void exitAppBtn_Click(object sender, EventArgs e)
+        private void ExitAppBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

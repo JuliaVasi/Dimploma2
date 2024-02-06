@@ -63,7 +63,7 @@
             this.themeLabel.Size = new System.Drawing.Size(270, 25);
             this.themeLabel.TabIndex = 4;
             this.themeLabel.Text = "Поразрядные операции";
-            this.themeLabel.Click += new System.EventHandler(this.OpenLesson);
+            this.themeLabel.Click += new System.EventHandler(this.ShowLesson_Click);
             this.themeLabel.MouseLeave += new System.EventHandler(this.ThemeLabel_MouseLeave);
             this.themeLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ThemeLabel_MouseMove);
             // 
@@ -90,7 +90,9 @@
             this.arrowOpenBtn.Size = new System.Drawing.Size(52, 52);
             this.arrowOpenBtn.TabIndex = 7;
             this.arrowOpenBtn.TabStop = false;
-            this.arrowOpenBtn.Click += new System.EventHandler(this.ArrowOpenBtn_Click);
+            this.arrowOpenBtn.Click += new System.EventHandler(this.ShowLesson_Click);
+            this.arrowOpenBtn.MouseLeave += new System.EventHandler(this.ArrowOpenBtn_MouseLeave);
+            this.arrowOpenBtn.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ArrowOpenBtn_MouseMove);
             // 
             // ThemeItemUserCont
             // 

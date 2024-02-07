@@ -79,13 +79,41 @@ namespace Dimploma
 
             for (int i = 0; i < 15; i++)
             {
+                FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
+                flowLayoutPanel.Width = themeItemsPanel.Width - 10;
                 Label docTitle = new Label();
                 docTitle.Text = $"{i}  gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sagjjgjgjsjdf.pdf";
                 docTitle.Font = new Font(fonts.Families[2], 20);
                 docTitle.Height = 60;
                 docTitle.Width = themeItemsPanel.Width - 2;
-                themeItemsPanel.Controls.Add(docTitle);
+                docTitle.Click += new EventHandler(this.OpenDocument);
+                docTitle.MouseLeave += new EventHandler(this.DocTitle_MouseLeave);
+                docTitle.MouseLeave += new EventHandler(this.DocTitle_MouseMove);
+
+                PictureBox docIcon = new PictureBox();
+                docIcon.Width = 30;
+                docIcon.Height = 30;
+                docIcon.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
+                docIcon.SizeMode = PictureBoxSizeMode.Zoom;
+
+                flowLayoutPanel.Controls.Add(docIcon);
+                flowLayoutPanel.Controls.Add(docTitle);
+                themeItemsPanel.Controls.Add(flowLayoutPanel);
             }
+        }
+
+        private void DocTitle_MouseMove(object sender, EventArgs e)
+        {
+            
+        }
+        private void DocTitle_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void OpenDocument(object sender, EventArgs e)
+        {
+            MessageBox.Show("It will work soon");
         }
 
         private void ShowLessonTitles()

@@ -157,9 +157,12 @@ namespace Dimploma
         }
         private void ShowLesson_Click(object sender, EventArgs e)
         {
-            Global.clearThemeItemsPanel();
+            Global.ClearThemeItemsPanel();
             lessonUserCont = new LessonUserCont(colorNumber);
             Global.themeItemsPanel.Controls.Add(lessonUserCont);
+
+            Global.ShowLesson();
+
         }
        
     }

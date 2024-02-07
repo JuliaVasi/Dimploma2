@@ -33,8 +33,8 @@
             this.ThemeLabel = new System.Windows.Forms.Label();
             this.Picturebox = new System.Windows.Forms.PictureBox();
             this.aboutLessonPanel = new System.Windows.Forms.Panel();
-            this.materialsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.MaterialLabel = new System.Windows.Forms.Label();
+            this.materialsPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).BeginInit();
             this.aboutLessonPanel.SuspendLayout();
             this.SuspendLayout();
@@ -90,22 +90,23 @@
             this.aboutLessonPanel.Size = new System.Drawing.Size(1126, 287);
             this.aboutLessonPanel.TabIndex = 10;
             // 
-            // materialsPanel
-            // 
-            this.materialsPanel.AutoScroll = true;
-            this.materialsPanel.Location = new System.Drawing.Point(4, 368);
-            this.materialsPanel.Name = "materialsPanel";
-            this.materialsPanel.Size = new System.Drawing.Size(1124, 469);
-            this.materialsPanel.TabIndex = 11;
-            // 
             // MaterialLabel
             // 
             this.MaterialLabel.AutoSize = true;
             this.MaterialLabel.Location = new System.Drawing.Point(3, 300);
+            this.MaterialLabel.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.MaterialLabel.Name = "MaterialLabel";
             this.MaterialLabel.Size = new System.Drawing.Size(65, 13);
             this.MaterialLabel.TabIndex = 12;
             this.MaterialLabel.Text = "Материалы";
+            // 
+            // materialsPanel
+            // 
+            this.materialsPanel.AutoScroll = true;
+            this.materialsPanel.Location = new System.Drawing.Point(1174, 213);
+            this.materialsPanel.Name = "materialsPanel";
+            this.materialsPanel.Size = new System.Drawing.Size(21, 10);
+            this.materialsPanel.TabIndex = 11;
             // 
             // LessonUserCont
             // 
@@ -115,7 +116,7 @@
             this.Controls.Add(this.materialsPanel);
             this.Controls.Add(this.aboutLessonPanel);
             this.Name = "LessonUserCont";
-            this.Size = new System.Drawing.Size(1249, 656);
+            this.Size = new System.Drawing.Size(1249, 347);
             this.Load += new System.EventHandler(this.LessonUserCont_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).EndInit();
             this.aboutLessonPanel.ResumeLayout(false);
@@ -131,7 +132,7 @@
         private System.Windows.Forms.PictureBox Picturebox;
         private System.Windows.Forms.Label ThemeLabel;
         private System.Windows.Forms.Panel aboutLessonPanel;
-        private System.Windows.Forms.FlowLayoutPanel materialsPanel;
         private System.Windows.Forms.Label MaterialLabel;
+        private System.Windows.Forms.FlowLayoutPanel materialsPanel;
     }
 }

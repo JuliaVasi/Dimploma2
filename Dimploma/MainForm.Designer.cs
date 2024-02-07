@@ -227,7 +227,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изучение языка программирования C#";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.upperMenu.ResumeLayout(false);
             this.upperMenu.PerformLayout();
             this.upperPanel.ResumeLayout(false);

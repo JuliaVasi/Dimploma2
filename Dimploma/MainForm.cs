@@ -25,27 +25,79 @@ namespace Dimploma
         public MainForm()
         {
             InitializeComponent();
-            Global.clearThemeItemsPanel = ClearThemeItemsPanel;
+            Global.ClearThemeItemsPanel = ClearThemeItemsPanel;
+            Global.ShowLesson = ShowLesson;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
+            Global.mainForm = this;
+            Global.themeItemsPanel = themeItemsPanel;
             AddFonts();
             SetFontsToMenuBtns();
             SetFonts();
+
+            ShowLessonTitles();
+
+            MenuSetup();
+            SetIconsToMenuBtns();
+
+        }
+
+        private void ShowLesson()
+        {
+            /*            for (int i = 0; i < 5; i++)
+                        {
+                            FlowLayoutPanel itemPanel = new FlowLayoutPanel();
+                            Label docTitle = new Label();
+                            PictureBox docIcon = new PictureBox();
+
+                            docTitle.Text = "gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sa.pdf";
+                            docTitle.Font = new Font(fonts.Families[2], 20);
+                            docTitle.Height = 60;
+
+                            itemPanel.Width = aboutLessonPanel.Width;
+                            itemPanel.Height = MaterialLabel.Height;
+
+                            docIcon.Width = 30;
+                            docIcon.Height = 30;
+                            docIcon.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
+                            docIcon.SizeMode = PictureBoxSizeMode.Zoom;
+
+                            itemPanel.Controls.Add(docIcon);
+                            itemPanel.Controls.Add(docTitle);
+
+                            materialsPanel.Controls.Add(itemPanel);
+                        }*/
+
+            /*            Label materialsLabel = new Label();
+                        materialsLabel.Text = "gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sa.pdf";
+                        materialsLabel.Font = new Font(fonts.Families[2], 20);
+                        materialsLabel.Height = 60;
+
+                        themeItemsPanel.Controls.Add(docTitle);*/
+
+            for (int i = 0; i < 15; i++)
+            {
+                Label docTitle = new Label();
+                docTitle.Text = $"{i}  gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sagjjgjgjsjdf.pdf";
+                docTitle.Font = new Font(fonts.Families[2], 20);
+                docTitle.Height = 60;
+                docTitle.Width = themeItemsPanel.Width - 2;
+                themeItemsPanel.Controls.Add(docTitle);
+            }
+        }
+
+        private void ShowLessonTitles()
+        {
             int colorNumber = 0;
-           for (int i=0; i<6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 if (colorNumber == 3) colorNumber = 0;
                 ThemeItemUserCont themeItem = new ThemeItemUserCont(colorNumber);
                 colorNumber++;
                 themeItemsPanel.Controls.Add(themeItem);
             }
-
-            Global.mainForm = this;
-            Global.themeItemsPanel = themeItemsPanel;
-            MenuSetup();
-            SetIconsToMenuBtns();
         }
 
         private void SetIconsToMenuBtns()

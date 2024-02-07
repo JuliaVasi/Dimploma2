@@ -28,7 +28,7 @@ namespace Dimploma
         {
             addFonts();
             SetFonts();
-            for(int i = 0; i<5; i++)
+/*            for(int i = 0; i<5; i++)
             {
                 FlowLayoutPanel itemPanel = new FlowLayoutPanel();
                 Label docTitle = new Label();
@@ -45,17 +45,12 @@ namespace Dimploma
                 docIcon.Height = 30;
                 docIcon.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
                 docIcon.SizeMode = PictureBoxSizeMode.Zoom;
-                
-                
 
-                
                 itemPanel.Controls.Add(docIcon);
                 itemPanel.Controls.Add(docTitle);
 
                 materialsPanel.Controls.Add(itemPanel);
-
-            }
-            
+            }*/
         }
 
         private void addFonts()

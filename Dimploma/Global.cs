@@ -11,6 +11,7 @@ namespace Dimploma
     {
        public static FlowLayoutPanel themeItemsPanel;
        public static MainForm mainForm;
-        public static Action clearThemeItemsPanel;
+        public static Action ClearThemeItemsPanel;
+        public static Action ShowLesson;
     }
 }

@@ -34,7 +34,6 @@
             this.Picturebox = new System.Windows.Forms.PictureBox();
             this.aboutLessonPanel = new System.Windows.Forms.Panel();
             this.MaterialLabel = new System.Windows.Forms.Label();
-            this.materialsPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).BeginInit();
             this.aboutLessonPanel.SuspendLayout();
             this.SuspendLayout();
@@ -100,20 +99,11 @@
             this.MaterialLabel.TabIndex = 12;
             this.MaterialLabel.Text = "Материалы";
             // 
-            // materialsPanel
-            // 
-            this.materialsPanel.AutoScroll = true;
-            this.materialsPanel.Location = new System.Drawing.Point(1174, 213);
-            this.materialsPanel.Name = "materialsPanel";
-            this.materialsPanel.Size = new System.Drawing.Size(21, 10);
-            this.materialsPanel.TabIndex = 11;
-            // 
             // LessonUserCont
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MaterialLabel);
-            this.Controls.Add(this.materialsPanel);
             this.Controls.Add(this.aboutLessonPanel);
             this.Name = "LessonUserCont";
             this.Size = new System.Drawing.Size(1249, 347);
@@ -133,6 +123,5 @@
         private System.Windows.Forms.Label ThemeLabel;
         private System.Windows.Forms.Panel aboutLessonPanel;
         private System.Windows.Forms.Label MaterialLabel;
-        private System.Windows.Forms.FlowLayoutPanel materialsPanel;
     }
 }

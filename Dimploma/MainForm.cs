@@ -36,63 +36,48 @@ namespace Dimploma
             AddFonts();
             SetFontsToMenuBtns();
             SetFonts();
-
             ShowLessonTitles();
-
             MenuSetup();
             SetIconsToMenuBtns();
-
         }
 
         private void ShowLesson()
         {
-            /*            for (int i = 0; i < 5; i++)
-                        {
-                            FlowLayoutPanel itemPanel = new FlowLayoutPanel();
-                            Label docTitle = new Label();
-                            PictureBox docIcon = new PictureBox();
+            ShowLessonContent();
+            saveLessonPicBox.Visible = true;
+            slashLabel.Text = "/";
+            themeLabel.Text = "Название лаалла";
+        }
 
-                            docTitle.Text = "gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sa.pdf";
-                            docTitle.Font = new Font(fonts.Families[2], 20);
-                            docTitle.Height = 60;
-
-                            itemPanel.Width = aboutLessonPanel.Width;
-                            itemPanel.Height = MaterialLabel.Height;
-
-                            docIcon.Width = 30;
-                            docIcon.Height = 30;
-                            docIcon.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
-                            docIcon.SizeMode = PictureBoxSizeMode.Zoom;
-
-                            itemPanel.Controls.Add(docIcon);
-                            itemPanel.Controls.Add(docTitle);
-
-                            materialsPanel.Controls.Add(itemPanel);
-                        }*/
-
-            /*            Label materialsLabel = new Label();
-                        materialsLabel.Text = "gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sa.pdf";
-                        materialsLabel.Font = new Font(fonts.Families[2], 20);
-                        materialsLabel.Height = 60;
-
-                        themeItemsPanel.Controls.Add(docTitle);*/
-
+        private void ShowLessonContent()
+        {  
             for (int i = 0; i < 15; i++)
             {
                 FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-                flowLayoutPanel.Width = themeItemsPanel.Width - 10;
-                Label docTitle = new Label();
-                docTitle.Text = $"{i}  gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sagjjgjgjsjdf.pdf";
+                TextBox docTitle = new TextBox();
+                PictureBox docIcon = new PictureBox();
+
+                flowLayoutPanel.Width = 1126;
+                flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+                flowLayoutPanel.AutoScroll = false;
+
+                docTitle.BackColor = Color.White;
+                docTitle.BorderStyle = BorderStyle.None;
+                docTitle.Multiline = true;
+                docTitle.Text = $"{i} Графический метод решения задач линейного программирования с помощью таблиц Excel.pdf";
                 docTitle.Font = new Font(fonts.Families[2], 20);
-                docTitle.Height = 60;
-                docTitle.Width = themeItemsPanel.Width - 2;
+                docTitle.Height = 75 * docTitle.Lines.Count();
+                docTitle.Width = flowLayoutPanel.Width - 60;
+                docTitle.Font = new Font(fonts.Families[0], 16);
+                flowLayoutPanel.Height = flowLayoutPanel.Height * docTitle.Lines.Count();
+
                 docTitle.Click += new EventHandler(this.OpenDocument);
                 docTitle.MouseLeave += new EventHandler(this.DocTitle_MouseLeave);
-                docTitle.MouseLeave += new EventHandler(this.DocTitle_MouseMove);
-
-                PictureBox docIcon = new PictureBox();
-                docIcon.Width = 30;
-                docIcon.Height = 30;
+                docTitle.MouseMove += new MouseEventHandler(this.DocTitle_MouseMove);
+              //  docTitle.MouseMove += new EventHandler(this.DocTitle_MouseMove);
+                
+                docIcon.Width = 40;
+                docIcon.Height = 40;
                 docIcon.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
                 docIcon.SizeMode = PictureBoxSizeMode.Zoom;
 
@@ -100,24 +85,32 @@ namespace Dimploma
                 flowLayoutPanel.Controls.Add(docTitle);
                 themeItemsPanel.Controls.Add(flowLayoutPanel);
             }
+            FlowLayoutPanel bottomSpace = new FlowLayoutPanel();
+            bottomSpace.Width = 30;
+            themeItemsPanel.Controls.Add(bottomSpace);
         }
 
         private void DocTitle_MouseMove(object sender, EventArgs e)
         {
-            
+            TextBox textbox = (TextBox ) sender;
+            textbox.ForeColor = ColorTranslator.FromHtml(ThemeColor.Blue);
         }
         private void DocTitle_MouseLeave(object sender, EventArgs e)
         {
-            
+            TextBox textbox = (TextBox)sender;
+            textbox.ForeColor = Color.Black;
         }
 
         private void OpenDocument(object sender, EventArgs e)
         {
-            MessageBox.Show("It will work soon");
+            TextBox textbox = (TextBox)sender;
+           
+            MessageBox.Show("IT WILL WORK SOON \n"+textbox.Text);
         }
 
         private void ShowLessonTitles()
         {
+            saveLessonPicBox.Visible = false;
             int colorNumber = 0;
             for (int i = 0; i < 6; i++)
             {
@@ -158,6 +151,8 @@ namespace Dimploma
         private void SetFonts()
         {
             formNameLabel.Font = new Font(fonts.Families[2], 20);
+            slashLabel.Font = new Font(fonts.Families[2], 20);
+            themeLabel.Font = new Font(fonts.Families[2], 20);
             exitAppBtn.Font = new Font(fonts.Families[2], 18);
             minimazeBtn.Font = new Font(fonts.Families[2], 18);
         }
@@ -202,12 +197,17 @@ namespace Dimploma
         {
             ActivateButton(sender);
             mainBtn.Image = (Image)(new Bitmap(Properties.Resources.home_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
+            formNameLabel.Text = "Главная";
+            ClearThemeItemsPanel();
+            ShowLessonTitles();
         }
 
         private void SavedBtn_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
             savedBtn.Image = (Image)(new Bitmap(Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
+            formNameLabel.Text = "Сохраненное";
+            ClearThemeItemsPanel();
         }
 
         private void MenuBtn_Click(object sender, EventArgs e)
@@ -277,6 +277,43 @@ namespace Dimploma
         private void ExitAppBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void SaveLessonPicBox_Click(object sender, EventArgs e)
+        {
+            saveLessonPicBox.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
+
+        }
+
+        private void FormNameLabel_Click(object sender, EventArgs e)
+        {
+            ClearThemeItemsPanel();
+            ShowLessonTitles();
+            ResetTopBar();
+        }
+
+        private void ResetTopBar()
+        {
+            ResetFormNameLabel();
+            slashLabel.Text = "";
+            themeLabel.Text = "";
+        }
+
+        private void ResetFormNameLabel()
+        {
+            formNameLabel.ForeColor = Color.Black;
+            formNameLabel.Font = new Font(fonts.Families[2], 20);
+        }
+
+        private void formNameLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            formNameLabel.ForeColor = ColorTranslator.FromHtml(ThemeColor.Blue);
+            formNameLabel.Font = new Font(fonts.Families[3], 20);
+        }
+
+        private void formNameLabel_MouseLeave(object sender, EventArgs e)
+        {
+            ResetFormNameLabel();
         }
     }
 }

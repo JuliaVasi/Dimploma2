@@ -162,7 +162,6 @@ namespace Dimploma
             Global.themeItemsPanel.Controls.Add(lessonUserCont);
 
             Global.ShowLesson();
-
         }
        
     }

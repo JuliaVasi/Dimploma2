@@ -28,29 +28,6 @@ namespace Dimploma
         {
             addFonts();
             SetFonts();
-/*            for(int i = 0; i<5; i++)
-            {
-                FlowLayoutPanel itemPanel = new FlowLayoutPanel();
-                Label docTitle = new Label();
-                PictureBox docIcon = new PictureBox();
-
-                docTitle.Text = "gjjgjgjsjdfjsfshhsghsghsg sdjghsg suishdg sgisghs agaisag sa.pdf";
-                docTitle.Font = new Font(fonts.Families[2], 20);
-                docTitle.Height = 60;
-
-                itemPanel.Width = aboutLessonPanel.Width;
-                itemPanel.Height = MaterialLabel.Height;
-                
-                docIcon.Width = 30;
-                docIcon.Height = 30;
-                docIcon.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
-                docIcon.SizeMode = PictureBoxSizeMode.Zoom;
-
-                itemPanel.Controls.Add(docIcon);
-                itemPanel.Controls.Add(docTitle);
-
-                materialsPanel.Controls.Add(itemPanel);
-            }*/
         }
 
         private void addFonts()
@@ -99,9 +76,5 @@ namespace Dimploma
             }
             graphics.FillRoundedRectangle(backgroundBrush, 10, 0, aboutLessonPanel.Width - 10, aboutLessonPanel.Height - 10, _radius);
         }
-
-
-
-
     }
 }

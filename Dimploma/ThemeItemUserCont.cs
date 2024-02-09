@@ -37,7 +37,7 @@ namespace Dimploma
                 Invalidate();
             }
         }
-        public ThemeItemUserCont(int colorNumber)
+        public ThemeItemUserCont(int colorNumber, Lecture lecture)
         {
             this.colorNumber = colorNumber;
             InitializeComponent();

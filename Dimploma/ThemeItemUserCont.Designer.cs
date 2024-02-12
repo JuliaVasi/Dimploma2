@@ -49,7 +49,7 @@
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
             this.descriptionTextbox.ReadOnly = true;
-            this.descriptionTextbox.Size = new System.Drawing.Size(736, 102);
+            this.descriptionTextbox.Size = new System.Drawing.Size(736, 90);
             this.descriptionTextbox.TabIndex = 6;
             this.descriptionTextbox.Text = resources.GetString("descriptionTextbox.Text");
             // 

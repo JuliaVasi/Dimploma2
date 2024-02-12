@@ -8,9 +8,9 @@ namespace Dimploma
 {
     public class Lecture
     {
-      public  string title, description;
-        public int id, number;
-        public string path;
+      public  string title, description, file;
+        public int id, lectureNumber;
+        public bool saved;
 
     }
 }

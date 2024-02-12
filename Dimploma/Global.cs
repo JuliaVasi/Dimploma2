@@ -13,5 +13,8 @@ namespace Dimploma
        public static MainForm mainForm;
         public static Action ClearThemeItemsPanel;
         public static Action ShowLesson;
+        public static int ColorNumber;
+
+        public static Lecture currentLecture;
     }
 }

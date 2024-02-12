@@ -17,11 +17,10 @@ namespace Dimploma
         private int _radius = 10;
         private SolidBrush backgroundBrush = new SolidBrush(SystemColors.Control);
         private SolidBrush innactiveBackgroundBrush = new SolidBrush(SystemColors.Control);
-        int colorNumber;
+
         PrivateFontCollection fonts;
-        public LessonUserCont(int colorNumber)
+        public LessonUserCont()
         {
-            this.colorNumber = colorNumber;
             InitializeComponent();
         }
         private void LessonUserCont_Load(object sender, EventArgs e)
@@ -56,6 +55,7 @@ namespace Dimploma
 
         private void DrawBackground(Graphics graphics)
         {
+            int colorNumber = Global.ColorNumber;
             switch (colorNumber)
             {
                 case 0:

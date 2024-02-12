@@ -15,54 +15,132 @@ namespace Dimploma
 
         public LecturesDB()
         {
-         string sql = "Create Table if not exists Lectures (" +
+         string query = "Create Table if not exists Lectures (" +
                 "id integer primary key, " +
-                "number integer,"+
+                "lectureNumber integer, "+
                 "title text,"+
                 "description text," +
-                "path text);";
-        
-        m_dbConnection = new SQLiteConnection(conString);
-        m_dbConnection.Open();
-        command = new SQLiteCommand(sql, m_dbConnection);
+                "file text," +
+                "saved bool);";
+         ExecuteCommand(query);
+         m_dbConnection.Close();
 
-        command.ExecuteNonQuery();
-        m_dbConnection.Close();
+            for (int i = 0; i < 1000; i++)
+            {
+                DeleteLecture(i);
+            }
+
+
+              SaveAllLectures();
         }
 
-        public List<LecturesDB> GetLecturesList()
+        private void SaveLecture(Lecture lecture)
         {
-            List<LecturesDB> lecturesList = new List<LecturesDB>();
-            string query = "Select * from Lectures;";
+            string query = "INSERT INTO  Lectures (" +
+                "lectureNumber, " +
+                "title," +
+                "description, " +
+                "file, " +
+                "saved)" +
+                "VALUES (" +
+                $"'{lecture.lectureNumber}', " +
+                $"'{lecture.title}', " +
+                $"'{lecture.description}'," +
+                $"'{lecture.file}'," +
+                $"'{lecture.saved}');";
+            ExecuteCommand(query);
+            m_dbConnection.Close();       
+        }
+        // to delete
+        private void DeleteLecture(int lectureId)
+        {
+            string query = $"Delete  from  Lectures where id = {lectureId};";
+            ExecuteCommand(query);
+            m_dbConnection.Close();
+        }
+
+        // to delete
+        private void TruncateTable()
+        {
+            string query = "TRUNCATE TABLE Lectures;";
+            ExecuteCommand(query);
+            m_dbConnection.Close();
+        }
+
+        private void ExecuteCommand(string query)
+        {
+            m_dbConnection = new SQLiteConnection(conString);
+            m_dbConnection.Open();
+            command = new SQLiteCommand(query, m_dbConnection);
+            command.ExecuteNonQuery();
+        }
+
+        public List<Lecture> GetLecturesList()
+        {
+            List<Lecture> lecturesList = new List<Lecture>();
+            string query = "SELECT  id, lectureNumber, title, description, saved from Lectures order by lectureNumber where title not like '';";
+            string query = "SELECT  id, lectureNumber, title, description, saved from Lectures order by lectureNumber where title not like '';";
+           // string query = "SELECT * from Lectures ;";
 
             m_dbConnection = new SQLiteConnection(conString);
             m_dbConnection.Open();
             command = new SQLiteCommand(query, m_dbConnection);
-
             SQLiteDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
                 Lecture lecture = new Lecture();
-             //   lecture.title = reader.GetString();
-
-/*                startdate.Text = reader.GetString(1);
-                finishdate.Text = reader.GetString(2);
-                requestStatusCombobox.SelectedItem = reader.GetString(3);
-                eqTextBox.Text = reader.GetString(4);
-                serialNumber.Text = reader.GetValue(5).ToString();
-                problemDescTextBox.Text = reader.GetString(6);
-                client.Text = reader.GetString(7);
-                clientNumber.Text = reader.GetString(8);
-                comboBox1Priority.SelectedItem = reader.GetString(9);
-                workerTextBox.Text = reader.GetString(10);
-                sparesTextBox.Text = reader.GetString(11);
-                reasonTextBox.Text = reader.GetString(12);
-                helptextBox.Text = reader.GetString(13);*/
+                lecture.id = reader.GetInt32(0);
+                lecture.lectureNumber = reader.GetInt32(1);
+                lecture.title = reader.GetString(2);
+                lecture.description = reader.GetString(3);
+               // lecture.saved = reader.GetBoolean(4);
+                lecturesList.Add(lecture);
             }
             m_dbConnection.Close();
             return lecturesList;
+        }    
+
+        public List<string> GetLectureFiles()
+        {
+            List<string> lecturesFiles = new List<string>();
+           // string query = $"SELECT id, file FROM Lectures WHERE lectureNumber = {lectureNumber};";
+            string query = $"SELECT id, file FROM Lectures WHERE lectureNumber = {Global.currentLecture.lectureNumber};";
+            m_dbConnection = new SQLiteConnection(conString);
+            m_dbConnection.Open();
+            command = new SQLiteCommand(query, m_dbConnection);
+            SQLiteDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lecturesFiles.Add(reader.GetString(1));
+            }
+            m_dbConnection.Close();
+            return lecturesFiles;
         }
 
+        private void SaveAllLectures()
+        {
+            List<string> docs = new List<string>();
+            //0.1 
+            
+            Lecture lecture = new Lecture();
+            lecture.description = "Крупнейший веб-сервис для хостинга IT-проектов и их совместной разработки.Крупнейший веб-сервис для хостинга IT-проектов и их совместной разработки.Крупнейший веб-сервис для хостинга IT-проектов и их совместной разработки.";
+            lecture.saved = false;
+
+            lecture.lectureNumber = 1;
+            lecture.title = "Основы языка C#";
+            docs.Add("Основы языка C#.pptx");
+            docs.Add("Практическая работа (трассировочные таблицы).docx");
+
+          for(int i = 0; i<docs.Count; i++)
+            {
+                lecture.file = docs[i];
+                SaveLecture(lecture);
+                lecture.title = "";
+                lecture.file = docs[i].Substring(0, docs[i].Length -4)+"pdf";
+                SaveLecture(lecture);
+            }
+        }
     }
 }

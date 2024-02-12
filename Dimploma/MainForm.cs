@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -22,36 +23,46 @@ namespace Dimploma
         private Button currentButton;
         PrivateFontCollection fonts = new PrivateFontCollection();
         bool menuExpanded = false;
+        LecturesDB lecturesDB = new LecturesDB();
+        List<Lecture> lectures;
         public MainForm()
         {
             InitializeComponent();
             Global.ClearThemeItemsPanel = ClearThemeItemsPanel;
             Global.ShowLesson = ShowLesson;
+            Global.mainForm = this;
+            Global.themeItemsPanel = themeItemsPanel;
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            Global.mainForm = this;
-            Global.themeItemsPanel = themeItemsPanel;
             AddFonts();
-            SetFontsToMenuBtns();
             SetFonts();
-            ShowLessonTitles();
+            SetFontsToMenuBtns();
             MenuSetup();
             SetIconsToMenuBtns();
+
+            ShowLessonTitles();
         }
 
         private void ShowLesson()
         {
-            ShowLessonContent();
+            ClearThemeItemsPanel();
+            ShowLessonDocs();
             saveLessonPicBox.Visible = true;
             slashLabel.Text = "/";
-            themeLabel.Text = "Название лаалла";
+            themeLabel.Text = Global.currentLecture.title;
         }
 
-        private void ShowLessonContent()
-        {  
-            for (int i = 0; i < 15; i++)
+        private void ShowLessonDocs()
+        {              
+            LessonUserCont lessonUserCont = new LessonUserCont();
+            themeItemsPanel.Controls.Add(lessonUserCont);
+
+            List<string> lectureFiles =  lecturesDB.GetLectureFiles();
+
+            for (int i = 0; i < lectureFiles.Count; i++)
             {
                 FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
                 TextBox docTitle = new TextBox();
@@ -64,21 +75,22 @@ namespace Dimploma
                 docTitle.BackColor = Color.White;
                 docTitle.BorderStyle = BorderStyle.None;
                 docTitle.Multiline = true;
-                docTitle.Text = $"{i} Графический метод решения задач линейного программирования с помощью таблиц Excel.pdf";
-                docTitle.Font = new Font(fonts.Families[2], 20);
+                docTitle.Text = lectureFiles[i];
                 docTitle.Height = 75 * docTitle.Lines.Count();
                 docTitle.Width = flowLayoutPanel.Width - 60;
                 docTitle.Font = new Font(fonts.Families[0], 16);
+                docTitle.ReadOnly = true;
+                docTitle.Cursor = Cursors.Hand;
                 flowLayoutPanel.Height = flowLayoutPanel.Height * docTitle.Lines.Count();
 
                 docTitle.Click += new EventHandler(this.OpenDocument);
                 docTitle.MouseLeave += new EventHandler(this.DocTitle_MouseLeave);
                 docTitle.MouseMove += new MouseEventHandler(this.DocTitle_MouseMove);
-              //  docTitle.MouseMove += new EventHandler(this.DocTitle_MouseMove);
-                
+
                 docIcon.Width = 40;
                 docIcon.Height = 40;
-                docIcon.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
+                docIcon.Image = Properties.Resources.description_FILL0_wght400_GRAD0_opsz24;
+
                 docIcon.SizeMode = PictureBoxSizeMode.Zoom;
 
                 flowLayoutPanel.Controls.Add(docIcon);
@@ -90,11 +102,13 @@ namespace Dimploma
             themeItemsPanel.Controls.Add(bottomSpace);
         }
 
+
         private void DocTitle_MouseMove(object sender, EventArgs e)
         {
             TextBox textbox = (TextBox ) sender;
             textbox.ForeColor = ColorTranslator.FromHtml(ThemeColor.Blue);
         }
+
         private void DocTitle_MouseLeave(object sender, EventArgs e)
         {
             TextBox textbox = (TextBox)sender;
@@ -103,19 +117,21 @@ namespace Dimploma
 
         private void OpenDocument(object sender, EventArgs e)
         {
-            TextBox textbox = (TextBox)sender;
-           
-            MessageBox.Show("IT WILL WORK SOON \n"+textbox.Text);
+            TextBox docTitle = (TextBox)sender;
+            Process.Start($"Lectures\\{docTitle.Text}");
         }
 
         private void ShowLessonTitles()
         {
+            lectures = lecturesDB.GetLecturesList();
+            
+            ThemeItemUserCont themeItem;
             saveLessonPicBox.Visible = false;
             int colorNumber = 0;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < lectures.Count; i++)
             {
                 if (colorNumber == 3) colorNumber = 0;
-                ThemeItemUserCont themeItem = new ThemeItemUserCont(colorNumber);
+                themeItem = new ThemeItemUserCont(colorNumber, lectures[i], fonts);
                 colorNumber++;
                 themeItemsPanel.Controls.Add(themeItem);
             }
@@ -282,7 +298,6 @@ namespace Dimploma
         private void SaveLessonPicBox_Click(object sender, EventArgs e)
         {
             saveLessonPicBox.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
-
         }
 
         private void FormNameLabel_Click(object sender, EventArgs e)

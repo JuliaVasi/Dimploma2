@@ -33,7 +33,6 @@
             this.upperMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.formNameLabel = new System.Windows.Forms.Label();
-            this.saveLessonPicBox = new System.Windows.Forms.PictureBox();
             this.exitAppBtn = new System.Windows.Forms.Button();
             this.themeItemsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.upperPanel = new System.Windows.Forms.Panel();
@@ -45,12 +44,13 @@
             this.menuBtn = new System.Windows.Forms.Button();
             this.TimerMenu = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.slashLabel = new System.Windows.Forms.Label();
             this.themeLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.saveLessonPicBox)).BeginInit();
+            this.slashLabel = new System.Windows.Forms.Label();
+            this.saveLessonPicBox = new System.Windows.Forms.PictureBox();
             this.upperPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveLessonPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // upperMenu
@@ -82,17 +82,6 @@
             this.formNameLabel.Click += new System.EventHandler(this.FormNameLabel_Click);
             this.formNameLabel.MouseLeave += new System.EventHandler(this.formNameLabel_MouseLeave);
             this.formNameLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formNameLabel_MouseMove);
-            // 
-            // saveLessonPicBox
-            // 
-            this.saveLessonPicBox.Image = global::Dimploma.Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24;
-            this.saveLessonPicBox.Location = new System.Drawing.Point(1271, 0);
-            this.saveLessonPicBox.Name = "saveLessonPicBox";
-            this.saveLessonPicBox.Size = new System.Drawing.Size(40, 40);
-            this.saveLessonPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.saveLessonPicBox.TabIndex = 0;
-            this.saveLessonPicBox.TabStop = false;
-            this.saveLessonPicBox.Click += new System.EventHandler(this.SaveLessonPicBox_Click);
             // 
             // exitAppBtn
             // 
@@ -144,7 +133,7 @@
             // 
             // menuPanel
             // 
-            this.menuPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.menuPanel.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.menuPanel.Controls.Add(this.menuBorder);
             this.menuPanel.Controls.Add(this.savedBtn);
             this.menuPanel.Controls.Add(this.mainBtn);
@@ -153,7 +142,7 @@
             this.menuPanel.MaximumSize = new System.Drawing.Size(265, 649);
             this.menuPanel.MinimumSize = new System.Drawing.Size(45, 649);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(45, 649);
+            this.menuPanel.Size = new System.Drawing.Size(265, 649);
             this.menuPanel.TabIndex = 0;
             // 
             // menuBorder
@@ -232,6 +221,14 @@
             this.panel1.Size = new System.Drawing.Size(1325, 43);
             this.panel1.TabIndex = 0;
             // 
+            // themeLabel
+            // 
+            this.themeLabel.AutoSize = true;
+            this.themeLabel.Location = new System.Drawing.Point(201, 1);
+            this.themeLabel.Name = "themeLabel";
+            this.themeLabel.Size = new System.Drawing.Size(0, 13);
+            this.themeLabel.TabIndex = 14;
+            // 
             // slashLabel
             // 
             this.slashLabel.AutoSize = true;
@@ -241,13 +238,16 @@
             this.slashLabel.Size = new System.Drawing.Size(0, 13);
             this.slashLabel.TabIndex = 13;
             // 
-            // themeLabel
+            // saveLessonPicBox
             // 
-            this.themeLabel.AutoSize = true;
-            this.themeLabel.Location = new System.Drawing.Point(201, 1);
-            this.themeLabel.Name = "themeLabel";
-            this.themeLabel.Size = new System.Drawing.Size(0, 13);
-            this.themeLabel.TabIndex = 14;
+            this.saveLessonPicBox.Image = global::Dimploma.Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24;
+            this.saveLessonPicBox.Location = new System.Drawing.Point(1271, 0);
+            this.saveLessonPicBox.Name = "saveLessonPicBox";
+            this.saveLessonPicBox.Size = new System.Drawing.Size(40, 40);
+            this.saveLessonPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.saveLessonPicBox.TabIndex = 0;
+            this.saveLessonPicBox.TabStop = false;
+            this.saveLessonPicBox.Click += new System.EventHandler(this.SaveLessonPicBox_Click);
             // 
             // MainForm
             // 
@@ -267,11 +267,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изучение языка программирования C#";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.saveLessonPicBox)).EndInit();
             this.upperPanel.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.saveLessonPicBox)).EndInit();
             this.ResumeLayout(false);
 
         }

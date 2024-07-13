@@ -24,7 +24,13 @@ namespace Dimploma
         PrivateFontCollection fonts = new PrivateFontCollection();
         bool menuExpanded = false;
         LecturesDB lecturesDB = new LecturesDB();
-        List<Lecture> lectures;
+
+        List<Lecture> lectures, presenDocList, wordDocList, pdfDocList;
+        FlowLayoutPanel docFlowLayoutPanel;
+        
+        Label docTitle;
+        List<Lecture> lectureFiles;
+        PictureBox docIcon;
         public MainForm()
         {
             InitializeComponent();
@@ -32,106 +38,186 @@ namespace Dimploma
             Global.ShowLesson = ShowLesson;
             Global.mainForm = this;
             Global.themeItemsPanel = themeItemsPanel;
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //Application.Run(new KeyEvents());
             AddFonts();
             SetFonts();
             SetFontsToMenuBtns();
             MenuSetup();
             SetIconsToMenuBtns();
 
+            lectures = lecturesDB.GetLecturesList();
             ShowLessonTitles();
         }
 
         private void ShowLesson()
         {
             ClearThemeItemsPanel();
+            ShowLessonUserCont();
             ShowLessonDocs();
+            SetSaveIcon();
             saveLessonPicBox.Visible = true;
             slashLabel.Text = "/";
-            themeLabel.Text = Global.currentLecture.title;
+            themeLabelMainForm.Text = Global.currentLecture.title;
+        }
+
+        private void ShowLessonUserCont()
+        {
+            LessonUserCont lessonUserCont = new LessonUserCont(fonts);
+            themeItemsPanel.Controls.Add(lessonUserCont);
         }
 
         private void ShowLessonDocs()
         {              
-            LessonUserCont lessonUserCont = new LessonUserCont();
-            themeItemsPanel.Controls.Add(lessonUserCont);
+            lectureFiles = lecturesDB.GetLectureData();
+            GroupFilesByType();
 
-            List<string> lectureFiles =  lecturesDB.GetLectureFiles();
-
-            for (int i = 0; i < lectureFiles.Count; i++)
+            if (presenDocList.Count > 0)
             {
-                FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
-                TextBox docTitle = new TextBox();
-                PictureBox docIcon = new PictureBox();
-
-                flowLayoutPanel.Width = 1126;
-                flowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
-                flowLayoutPanel.AutoScroll = false;
-
-                docTitle.BackColor = Color.White;
-                docTitle.BorderStyle = BorderStyle.None;
-                docTitle.Multiline = true;
-                docTitle.Text = lectureFiles[i];
-                docTitle.Height = 75 * docTitle.Lines.Count();
-                docTitle.Width = flowLayoutPanel.Width - 60;
-                docTitle.Font = new Font(fonts.Families[0], 16);
-                docTitle.ReadOnly = true;
-                docTitle.Cursor = Cursors.Hand;
-                flowLayoutPanel.Height = flowLayoutPanel.Height * docTitle.Lines.Count();
-
-                docTitle.Click += new EventHandler(this.OpenDocument);
-                docTitle.MouseLeave += new EventHandler(this.DocTitle_MouseLeave);
-                docTitle.MouseMove += new MouseEventHandler(this.DocTitle_MouseMove);
-
-                docIcon.Width = 40;
-                docIcon.Height = 40;
-                docIcon.Image = Properties.Resources.description_FILL0_wght400_GRAD0_opsz24;
-
-                docIcon.SizeMode = PictureBoxSizeMode.Zoom;
-
-                flowLayoutPanel.Controls.Add(docIcon);
-                flowLayoutPanel.Controls.Add(docTitle);
-                themeItemsPanel.Controls.Add(flowLayoutPanel);
+                themeItemsPanel.Controls.Add(SetGroupName("Презентации"));
+                ShowFilesGroup(presenDocList);
             }
+             if (presenDocList.Count > 0)
+            {
+                themeItemsPanel.Controls.Add(SetGroupName("Документы"));
+                ShowFilesGroup(wordDocList);
+            }
+            if (pdfDocList.Count > 0)
+            {
+                themeItemsPanel.Controls.Add(SetGroupName("pdf"));
+                ShowFilesGroup(pdfDocList);
+            }
+            AddBottomSpace();
+            SetPicToBox();
+        }
+
+        private void SetPicToBox()
+        {
+            switch (Global.ColorNumber)
+            {
+                case 0:
+                    Global.picturebox.Image = Dimploma.Properties.Resources.Code_typing_bro_blue;
+                    break;
+
+                case 1:
+                    Global.picturebox.Image = Properties.Resources.Code_typing_bro_violet;
+                    break;
+
+                case 2:
+                    Global.picturebox.Image = Properties.Resources.Code_typing_bro_teal;
+                    break;
+            }
+        }
+
+        private void ShowFilesGroup(List<Lecture> filesList)
+        {
+             for(int i = 0; i< filesList.Count; i++)
+            {
+                docFlowLayoutPanel = new FlowLayoutPanel();
+                SetDocFlowLPanel();
+                SetDocTitle(filesList[i].file);
+                SetDocIcon();
+                docFlowLayoutPanel.Controls.Add(docIcon);
+                docFlowLayoutPanel.Controls.Add(docTitle);
+                themeItemsPanel.Controls.Add(docFlowLayoutPanel);
+            }
+        }
+
+        private Label SetGroupName(string name)
+        {
+            Label groupLabel = new Label();
+            groupLabel.BackColor = Color.White;
+            groupLabel.ForeColor = Color.Gray;
+            groupLabel.BorderStyle = BorderStyle.None;
+            groupLabel.Text = name;
+            groupLabel.Height = 50;
+            groupLabel.Width = themeItemsPanel.Width - 30;
+            groupLabel.Font = new Font(fonts.Families[3], 16);
+            return groupLabel;
+        }
+
+        private void GroupFilesByType()
+        {
+            presenDocList = new List<Lecture>();
+            wordDocList = new List<Lecture>();
+            pdfDocList = new List<Lecture>();
+            for(int i =0; i<lectureFiles.Count; i++)
+            {
+                Lecture lecture = lectureFiles[i];
+                if (lecture.file.Contains(".pdf")) pdfDocList.Add(lecture);
+                else if  (lecture.file.Contains(".pptx")) presenDocList.Add(lecture);
+                else wordDocList.Add(lecture);
+            }
+        }
+
+        private void AddBottomSpace()
+        {
             FlowLayoutPanel bottomSpace = new FlowLayoutPanel();
             bottomSpace.Width = 30;
             themeItemsPanel.Controls.Add(bottomSpace);
         }
 
+        private void SetDocIcon()
+        {
+            docIcon = new PictureBox();
+            docIcon.Width = 40;
+            docIcon.Height = 40;
+            docIcon.Image = Properties.Resources.description_FILL0_wght400_GRAD0_opsz24;
+            docIcon.SizeMode = PictureBoxSizeMode.Zoom;
+        }
+
+        private void SetDocFlowLPanel()
+        {
+            docFlowLayoutPanel.Height = 75;
+            docFlowLayoutPanel.Width = 1126;
+            docFlowLayoutPanel.FlowDirection = FlowDirection.LeftToRight;
+            docFlowLayoutPanel.AutoScroll = false;
+        }
+
+        private void SetDocTitle(string fileName)
+        {
+            docTitle = new Label();
+            docTitle.BackColor = Color.White;
+            docTitle.BorderStyle = BorderStyle.None;
+            docTitle.Text = fileName;
+            docTitle.Height = 75;
+            docTitle.Width = docFlowLayoutPanel.Width - 60;
+            docTitle.Font = new Font(fonts.Families[0], 16);
+            docTitle.Cursor = Cursors.Hand;
+            docTitle.Click += new EventHandler(this.OpenDocument);
+            docTitle.MouseLeave += new EventHandler(this.DocTitle_MouseLeave);
+            docTitle.MouseMove += new MouseEventHandler(this.DocTitle_MouseMove);
+        }
 
         private void DocTitle_MouseMove(object sender, EventArgs e)
         {
-            TextBox textbox = (TextBox ) sender;
+            Label textbox = (Label ) sender;
             textbox.ForeColor = ColorTranslator.FromHtml(ThemeColor.Blue);
         }
 
         private void DocTitle_MouseLeave(object sender, EventArgs e)
         {
-            TextBox textbox = (TextBox)sender;
+            Label textbox = (Label)sender;
             textbox.ForeColor = Color.Black;
         }
 
         private void OpenDocument(object sender, EventArgs e)
         {
-            TextBox docTitle = (TextBox)sender;
+            Label docTitle = (Label)sender;
             Process.Start($"Lectures\\{docTitle.Text}");
         }
 
         private void ShowLessonTitles()
         {
-            lectures = lecturesDB.GetLecturesList();
-            
-            ThemeItemUserCont themeItem;
             saveLessonPicBox.Visible = false;
             int colorNumber = 0;
             for (int i = 0; i < lectures.Count; i++)
             {
                 if (colorNumber == 3) colorNumber = 0;
-                themeItem = new ThemeItemUserCont(colorNumber, lectures[i], fonts);
+                ThemeItemUserCont themeItem = new ThemeItemUserCont(colorNumber, lectures[i], fonts);
                 colorNumber++;
                 themeItemsPanel.Controls.Add(themeItem);
             }
@@ -141,6 +227,7 @@ namespace Dimploma
         {
             mainBtn.Image = (Image)(new Bitmap(Properties.Resources.home_FILL0_wght400_GRAD0_opsz241, new Size(30, 30)));
             savedBtn.Image = (Image)(new Bitmap(Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24, new Size(30, 30)));
+            progInfoBtn.Image = (Image)(new Bitmap(Properties.Resources.info_FILL0_wght400_GRAD0_opsz, new Size(30, 30)));
         }
 
         private void MenuSetup()
@@ -168,7 +255,7 @@ namespace Dimploma
         {
             formNameLabel.Font = new Font(fonts.Families[2], 20);
             slashLabel.Font = new Font(fonts.Families[2], 20);
-            themeLabel.Font = new Font(fonts.Families[2], 20);
+            themeLabelMainForm.Font = new Font(fonts.Families[2], 20);
             exitAppBtn.Font = new Font(fonts.Families[2], 18);
             minimazeBtn.Font = new Font(fonts.Families[2], 18);
         }
@@ -178,11 +265,13 @@ namespace Dimploma
             mainBtn.Font = new Font(fonts.Families[0], 16);
             menuBtn.Font = new Font(fonts.Families[0], 16);
             savedBtn.Font = new Font(fonts.Families[0], 16);
+            progInfoBtn.Font = new Font(fonts.Families[0], 16);
         }
         
         private void ActivateButton(object btnSender)
         {
-            if(btnSender != null)
+            ResetThemeLabel();
+            if (btnSender != null)
             {
                 if(currentButton != (Button)btnSender)
                 {
@@ -215,6 +304,7 @@ namespace Dimploma
             mainBtn.Image = (Image)(new Bitmap(Properties.Resources.home_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
             formNameLabel.Text = "Главная";
             ClearThemeItemsPanel();
+            lectures = lecturesDB.GetLecturesList();
             ShowLessonTitles();
         }
 
@@ -224,6 +314,13 @@ namespace Dimploma
             savedBtn.Image = (Image)(new Bitmap(Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24, new Size(30, 30)));
             formNameLabel.Text = "Сохраненное";
             ClearThemeItemsPanel();
+            ShowSavedLessonTitles();
+        }
+
+        private void ShowSavedLessonTitles()
+        {
+            lectures = lecturesDB.GetSavedLectList();
+            ShowLessonTitles();
         }
 
         private void MenuBtn_Click(object sender, EventArgs e)
@@ -297,21 +394,75 @@ namespace Dimploma
 
         private void SaveLessonPicBox_Click(object sender, EventArgs e)
         {
-            saveLessonPicBox.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
+            ChangeSaveIcon();
+        }
+
+        private void ChangeSaveIcon()
+        {
+            if (Global.currentLecture.saved)
+            {
+                saveLessonPicBox.Image = Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24;
+                Global.currentLecture.saved = false;
+                lecturesDB.UpdateLecture();
+            }
+            else
+            {
+                saveLessonPicBox.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
+                Global.currentLecture.saved = true;
+                lecturesDB.UpdateLecture();
+            }
+        }
+        private void SetSaveIcon()
+        {
+            if (Global.currentLecture.saved)
+                saveLessonPicBox.Image = Properties.Resources.bookmark_FILL1_wght400_GRAD0_opsz24;
+            else
+                saveLessonPicBox.Image = Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24;
         }
 
         private void FormNameLabel_Click(object sender, EventArgs e)
         {
+            if (!formNameLabel.Text.Equals("О программе"))
+            {
             ClearThemeItemsPanel();
+            GetLecturesListFromDB();
             ShowLessonTitles();
-            ResetTopBar();
+            ResetFormNameLabel();
+            ResetThemeLabel();
+            }
+        }
+        private void GetLecturesListFromDB()
+        {
+            if (formNameLabel.Text.Equals("Главная"))
+            {
+                lectures = lecturesDB.GetLecturesList();
+            }
+            else if (formNameLabel.Text.Equals("Сохраненное"))
+            {
+                lectures = lecturesDB.GetSavedLectList();
+            }  
+        }
+
+        private void ResetThemeLabel()
+        {
+            slashLabel.Text = "";
+            themeLabelMainForm.Text = "";
         }
 
         private void ResetTopBar()
         {
             ResetFormNameLabel();
-            slashLabel.Text = "";
-            themeLabel.Text = "";
+        }
+
+        private void progInfoBtn_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            progInfoBtn.Image = (Image)(new Bitmap(Properties.Resources.info_FILL1_wght400_GRAD0_opsz, new Size(30, 30)));
+            formNameLabel.Text = "О программе";
+            ClearThemeItemsPanel();
+            ProgInfoUserCont infoUserCont = new ProgInfoUserCont(fonts);
+            Global.infoTextBox.ForeColor = Color.Black;
+            themeItemsPanel.Controls.Add(infoUserCont);
         }
 
         private void ResetFormNameLabel()

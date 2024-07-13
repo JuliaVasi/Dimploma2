@@ -14,7 +14,8 @@ namespace Dimploma
         public static Action ClearThemeItemsPanel;
         public static Action ShowLesson;
         public static int ColorNumber;
-
+        public static PictureBox picturebox;
         public static Lecture currentLecture;
+        public static TextBox infoTextBox;
     }
 }

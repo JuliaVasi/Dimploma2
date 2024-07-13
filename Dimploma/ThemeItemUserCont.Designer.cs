@@ -44,12 +44,13 @@
             this.descriptionTextbox.Cursor = System.Windows.Forms.Cursors.Default;
             this.descriptionTextbox.Enabled = false;
             this.descriptionTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.descriptionTextbox.Location = new System.Drawing.Point(237, 77);
+            this.descriptionTextbox.Location = new System.Drawing.Point(316, 95);
+            this.descriptionTextbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.descriptionTextbox.MaxLength = 2000;
             this.descriptionTextbox.Multiline = true;
             this.descriptionTextbox.Name = "descriptionTextbox";
             this.descriptionTextbox.ReadOnly = true;
-            this.descriptionTextbox.Size = new System.Drawing.Size(736, 90);
+            this.descriptionTextbox.Size = new System.Drawing.Size(981, 111);
             this.descriptionTextbox.TabIndex = 6;
             this.descriptionTextbox.Text = resources.GetString("descriptionTextbox.Text");
             // 
@@ -57,10 +58,12 @@
             // 
             this.themeLabel.AutoSize = true;
             this.themeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.themeLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.themeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.themeLabel.Location = new System.Drawing.Point(232, 29);
+            this.themeLabel.Location = new System.Drawing.Point(309, 36);
+            this.themeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.themeLabel.Name = "themeLabel";
-            this.themeLabel.Size = new System.Drawing.Size(270, 25);
+            this.themeLabel.Size = new System.Drawing.Size(336, 31);
             this.themeLabel.TabIndex = 4;
             this.themeLabel.Text = "Поразрядные операции";
             this.themeLabel.Click += new System.EventHandler(this.ShowLesson_Click);
@@ -72,9 +75,10 @@
             this.picturebox.BackColor = System.Drawing.Color.Transparent;
             this.picturebox.ErrorImage = null;
             this.picturebox.InitialImage = null;
-            this.picturebox.Location = new System.Drawing.Point(33, 29);
+            this.picturebox.Location = new System.Drawing.Point(44, 36);
+            this.picturebox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(150, 150);
+            this.picturebox.Size = new System.Drawing.Size(200, 185);
             this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picturebox.TabIndex = 5;
             this.picturebox.TabStop = false;
@@ -82,12 +86,12 @@
             // arrowOpenBtn
             // 
             this.arrowOpenBtn.BackColor = System.Drawing.Color.Transparent;
-            this.arrowOpenBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.arrowOpenBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.arrowOpenBtn.Image = global::Dimploma.Properties.Resources.arrow_circle_lightblue1;
-            this.arrowOpenBtn.Location = new System.Drawing.Point(1041, 139);
+            this.arrowOpenBtn.Location = new System.Drawing.Point(1388, 171);
             this.arrowOpenBtn.Margin = new System.Windows.Forms.Padding(0);
             this.arrowOpenBtn.Name = "arrowOpenBtn";
-            this.arrowOpenBtn.Size = new System.Drawing.Size(52, 52);
+            this.arrowOpenBtn.Size = new System.Drawing.Size(69, 64);
             this.arrowOpenBtn.TabIndex = 7;
             this.arrowOpenBtn.TabStop = false;
             this.arrowOpenBtn.Click += new System.EventHandler(this.ShowLesson_Click);
@@ -96,15 +100,16 @@
             // 
             // ThemeItemUserCont
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.arrowOpenBtn);
             this.Controls.Add(this.descriptionTextbox);
             this.Controls.Add(this.picturebox);
             this.Controls.Add(this.themeLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ThemeItemUserCont";
-            this.Size = new System.Drawing.Size(1126, 220);
+            this.Size = new System.Drawing.Size(1501, 271);
             this.Load += new System.EventHandler(this.ThemeItemUserCont_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.arrowOpenBtn)).EndInit();

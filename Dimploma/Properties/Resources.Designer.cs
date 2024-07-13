@@ -173,6 +173,36 @@ namespace Dimploma.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Code_typing_bro_blue {
+            get {
+                object obj = ResourceManager.GetObject("Code typing-bro blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Code_typing_bro_teal {
+            get {
+                object obj = ResourceManager.GetObject("Code typing-bro teal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Code_typing_bro_violet {
+            get {
+                object obj = ResourceManager.GetObject("Code typing-bro violet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap description_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("description_FILL0_wght400_GRAD0_opsz24", resourceCulture);
@@ -236,6 +266,76 @@ namespace Dimploma.Properties {
         internal static System.Drawing.Bitmap home_FILL1_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("home_FILL1_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_FILL0_wght400_GRAD0_opsz {
+            get {
+                object obj = ResourceManager.GetObject("info_FILL0_wght400_GRAD0_opsz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_FILL0_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("info_FILL0_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_FILL0_wght400_GRAD0_opsz241 {
+            get {
+                object obj = ResourceManager.GetObject("info_FILL0_wght400_GRAD0_opsz241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_FILL1_wght400_GRAD0_opsz {
+            get {
+                object obj = ResourceManager.GetObject("info_FILL1_wght400_GRAD0_opsz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_FILL1_wght400_GRAD0_opsz1 {
+            get {
+                object obj = ResourceManager.GetObject("info_FILL1_wght400_GRAD0_opsz1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_FILL1_wght400_GRAD0_opsz24 {
+            get {
+                object obj = ResourceManager.GetObject("info_FILL1_wght400_GRAD0_opsz24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_FILL1_wght400_GRAD0_opsz241 {
+            get {
+                object obj = ResourceManager.GetObject("info_FILL1_wght400_GRAD0_opsz241", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

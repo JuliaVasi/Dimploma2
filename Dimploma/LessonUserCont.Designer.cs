@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LessonUserCont));
             this.DescriptionTextbox = new System.Windows.Forms.TextBox();
             this.ThemeLabel = new System.Windows.Forms.Label();
-            this.Picturebox = new System.Windows.Forms.PictureBox();
             this.aboutLessonPanel = new System.Windows.Forms.Panel();
+            this.picturebox = new System.Windows.Forms.PictureBox();
             this.MaterialLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).BeginInit();
             this.aboutLessonPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // DescriptionTextbox
@@ -50,9 +49,9 @@
             this.DescriptionTextbox.Multiline = true;
             this.DescriptionTextbox.Name = "DescriptionTextbox";
             this.DescriptionTextbox.ReadOnly = true;
-            this.DescriptionTextbox.Size = new System.Drawing.Size(713, 96);
+            this.DescriptionTextbox.Size = new System.Drawing.Size(713, 123);
             this.DescriptionTextbox.TabIndex = 9;
-            this.DescriptionTextbox.Text = resources.GetString("DescriptionTextbox.Text");
+            this.DescriptionTextbox.Text = "Описание";
             // 
             // ThemeLabel
             // 
@@ -61,33 +60,32 @@
             this.ThemeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ThemeLabel.Location = new System.Drawing.Point(63, 41);
             this.ThemeLabel.Name = "ThemeLabel";
-            this.ThemeLabel.Size = new System.Drawing.Size(270, 25);
+            this.ThemeLabel.Size = new System.Drawing.Size(68, 25);
             this.ThemeLabel.TabIndex = 7;
-            this.ThemeLabel.Text = "Поразрядные операции";
-            // 
-            // Picturebox
-            // 
-            this.Picturebox.BackColor = System.Drawing.Color.Transparent;
-            this.Picturebox.ErrorImage = null;
-            this.Picturebox.Image = global::Dimploma.Properties.Resources.пикча__1_;
-            this.Picturebox.InitialImage = null;
-            this.Picturebox.Location = new System.Drawing.Point(856, 41);
-            this.Picturebox.Name = "Picturebox";
-            this.Picturebox.Size = new System.Drawing.Size(213, 208);
-            this.Picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Picturebox.TabIndex = 8;
-            this.Picturebox.TabStop = false;
+            this.ThemeLabel.Text = "Тема";
             // 
             // aboutLessonPanel
             // 
             this.aboutLessonPanel.BackColor = System.Drawing.Color.Transparent;
-            this.aboutLessonPanel.Controls.Add(this.Picturebox);
+            this.aboutLessonPanel.Controls.Add(this.picturebox);
             this.aboutLessonPanel.Controls.Add(this.ThemeLabel);
             this.aboutLessonPanel.Controls.Add(this.DescriptionTextbox);
             this.aboutLessonPanel.Location = new System.Drawing.Point(1, 1);
             this.aboutLessonPanel.Name = "aboutLessonPanel";
             this.aboutLessonPanel.Size = new System.Drawing.Size(1126, 287);
             this.aboutLessonPanel.TabIndex = 10;
+            // 
+            // picturebox
+            // 
+            this.picturebox.BackColor = System.Drawing.Color.Transparent;
+            this.picturebox.ErrorImage = null;
+            this.picturebox.InitialImage = null;
+            this.picturebox.Location = new System.Drawing.Point(844, 41);
+            this.picturebox.Name = "picturebox";
+            this.picturebox.Size = new System.Drawing.Size(233, 208);
+            this.picturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picturebox.TabIndex = 8;
+            this.picturebox.TabStop = false;
             // 
             // MaterialLabel
             // 
@@ -108,9 +106,9 @@
             this.Name = "LessonUserCont";
             this.Size = new System.Drawing.Size(1249, 347);
             this.Load += new System.EventHandler(this.LessonUserCont_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Picturebox)).EndInit();
             this.aboutLessonPanel.ResumeLayout(false);
             this.aboutLessonPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,7 +117,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox DescriptionTextbox;
-        private System.Windows.Forms.PictureBox Picturebox;
+        private System.Windows.Forms.PictureBox picturebox;
         private System.Windows.Forms.Label ThemeLabel;
         private System.Windows.Forms.Panel aboutLessonPanel;
         private System.Windows.Forms.Label MaterialLabel;

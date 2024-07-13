@@ -45,6 +45,7 @@ namespace Dimploma
             this.fonts = fonts;
             InitializeComponent();
         }
+
         private void ThemeItemUserCont_Load(object sender, EventArgs e)
         {
             SetFonts();
@@ -141,6 +142,7 @@ namespace Dimploma
         {
             arrowOpenBtn.Image = innactiveArrowimg;
         }
+
         private void ArrowOpenBtn_MouseMove(object sender, MouseEventArgs e)
         {
             switch (colorNumber)
@@ -159,6 +161,7 @@ namespace Dimploma
                     break;
             }
         }
+
         private void ShowLesson_Click(object sender, EventArgs e)
         {
             Global.ColorNumber = colorNumber;

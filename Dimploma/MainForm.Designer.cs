@@ -38,19 +38,22 @@
             this.upperPanel = new System.Windows.Forms.Panel();
             this.minimazeBtn = new System.Windows.Forms.Button();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.progInfoBtn = new System.Windows.Forms.Button();
             this.menuBorder = new System.Windows.Forms.Panel();
             this.savedBtn = new System.Windows.Forms.Button();
             this.mainBtn = new System.Windows.Forms.Button();
             this.menuBtn = new System.Windows.Forms.Button();
             this.TimerMenu = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.themeLabel = new System.Windows.Forms.Label();
-            this.slashLabel = new System.Windows.Forms.Label();
             this.saveLessonPicBox = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.slashLabel = new System.Windows.Forms.Label();
+            this.themeLabelMainForm = new System.Windows.Forms.Label();
             this.upperPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.saveLessonPicBox)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // upperMenu
@@ -72,7 +75,7 @@
             // 
             this.formNameLabel.AutoSize = true;
             this.formNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.formNameLabel.Location = new System.Drawing.Point(67, 1);
+            this.formNameLabel.Location = new System.Drawing.Point(3, 0);
             this.formNameLabel.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.formNameLabel.Name = "formNameLabel";
             this.formNameLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -134,16 +137,34 @@
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.menuPanel.Controls.Add(this.progInfoBtn);
             this.menuPanel.Controls.Add(this.menuBorder);
             this.menuPanel.Controls.Add(this.savedBtn);
             this.menuPanel.Controls.Add(this.mainBtn);
             this.menuPanel.Controls.Add(this.menuBtn);
-            this.menuPanel.Location = new System.Drawing.Point(-1, 65);
-            this.menuPanel.MaximumSize = new System.Drawing.Size(265, 649);
-            this.menuPanel.MinimumSize = new System.Drawing.Size(45, 649);
+            this.menuPanel.Location = new System.Drawing.Point(-1, 24);
+            this.menuPanel.MaximumSize = new System.Drawing.Size(265, 704);
+            this.menuPanel.MinimumSize = new System.Drawing.Size(45, 704);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(265, 649);
+            this.menuPanel.Size = new System.Drawing.Size(45, 704);
             this.menuPanel.TabIndex = 0;
+            // 
+            // progInfoBtn
+            // 
+            this.progInfoBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.progInfoBtn.FlatAppearance.BorderSize = 0;
+            this.progInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.progInfoBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progInfoBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.progInfoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.progInfoBtn.Location = new System.Drawing.Point(0, 631);
+            this.progInfoBtn.Name = "progInfoBtn";
+            this.progInfoBtn.Size = new System.Drawing.Size(254, 60);
+            this.progInfoBtn.TabIndex = 7;
+            this.progInfoBtn.Text = "   О программе";
+            this.progInfoBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.progInfoBtn.UseVisualStyleBackColor = false;
+            this.progInfoBtn.Click += new System.EventHandler(this.progInfoBtn_Click);
             // 
             // menuBorder
             // 
@@ -211,43 +232,51 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.themeLabel);
-            this.panel1.Controls.Add(this.slashLabel);
-            this.panel1.Controls.Add(this.formNameLabel);
             this.panel1.Controls.Add(this.saveLessonPicBox);
+            this.panel1.Controls.Add(this.flowLayoutPanel2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(1, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1325, 43);
             this.panel1.TabIndex = 0;
             // 
-            // themeLabel
+            // saveLessonPicBox
             // 
-            this.themeLabel.AutoSize = true;
-            this.themeLabel.Location = new System.Drawing.Point(201, 1);
-            this.themeLabel.Name = "themeLabel";
-            this.themeLabel.Size = new System.Drawing.Size(0, 13);
-            this.themeLabel.TabIndex = 14;
+            this.saveLessonPicBox.Image = global::Dimploma.Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24;
+            this.saveLessonPicBox.Location = new System.Drawing.Point(1274, 1);
+            this.saveLessonPicBox.Name = "saveLessonPicBox";
+            this.saveLessonPicBox.Size = new System.Drawing.Size(48, 40);
+            this.saveLessonPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.saveLessonPicBox.TabIndex = 0;
+            this.saveLessonPicBox.TabStop = false;
+            this.saveLessonPicBox.Click += new System.EventHandler(this.SaveLessonPicBox_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.formNameLabel);
+            this.flowLayoutPanel2.Controls.Add(this.slashLabel);
+            this.flowLayoutPanel2.Controls.Add(this.themeLabelMainForm);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(69, 1);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1144, 40);
+            this.flowLayoutPanel2.TabIndex = 15;
             // 
             // slashLabel
             // 
             this.slashLabel.AutoSize = true;
-            this.slashLabel.Location = new System.Drawing.Point(180, 1);
+            this.slashLabel.Location = new System.Drawing.Point(130, 0);
             this.slashLabel.Margin = new System.Windows.Forms.Padding(0);
             this.slashLabel.Name = "slashLabel";
             this.slashLabel.Size = new System.Drawing.Size(0, 13);
             this.slashLabel.TabIndex = 13;
             // 
-            // saveLessonPicBox
+            // themeLabelMainForm
             // 
-            this.saveLessonPicBox.Image = global::Dimploma.Properties.Resources.bookmark_FILL0_wght400_GRAD0_opsz24;
-            this.saveLessonPicBox.Location = new System.Drawing.Point(1271, 0);
-            this.saveLessonPicBox.Name = "saveLessonPicBox";
-            this.saveLessonPicBox.Size = new System.Drawing.Size(40, 40);
-            this.saveLessonPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.saveLessonPicBox.TabIndex = 0;
-            this.saveLessonPicBox.TabStop = false;
-            this.saveLessonPicBox.Click += new System.EventHandler(this.SaveLessonPicBox_Click);
+            this.themeLabelMainForm.AutoSize = true;
+            this.themeLabelMainForm.Location = new System.Drawing.Point(133, 0);
+            this.themeLabelMainForm.Name = "themeLabelMainForm";
+            this.themeLabelMainForm.Size = new System.Drawing.Size(0, 13);
+            this.themeLabelMainForm.TabIndex = 14;
             // 
             // MainForm
             // 
@@ -255,8 +284,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1328, 716);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuPanel);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.upperPanel);
             this.Controls.Add(this.upperMenu);
             this.Controls.Add(this.themeItemsPanel);
@@ -270,8 +299,9 @@
             this.upperPanel.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.saveLessonPicBox)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -292,8 +322,10 @@
         private System.Windows.Forms.Timer TimerMenu;
         private System.Windows.Forms.PictureBox saveLessonPicBox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label themeLabel;
+        private System.Windows.Forms.Label themeLabelMainForm;
         private System.Windows.Forms.Label slashLabel;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button progInfoBtn;
     }
 }
 
